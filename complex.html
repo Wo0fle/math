@@ -35,14 +35,14 @@
             </ul>
         </div>
 
+        you may remember all the way back in your <a >elementary algebra</a> days of the notion of the imaginary number \(i=\sqrt{-1}\).
+            <br><br>
+        in this page, we will reintroduce complex numbers in a rigorous and formal way!
+
         <hr>
 
         <h2 id="intro-to-C">intro to \(\mathbb{C}\)</h2>
 
-        you may remember all the way back in your <a >elementary algebra</a> days of the notion of the imaginary number \(i=\sqrt{-1}\).
-            <br><br>
-        in this page, we will reintroduce complex numbers in a rigorous and formal way!
-            <br><br>
         complex numbers can be thought of as points in the coordinate plane, the same way that real numbers are points on the real line.
             <br><br>
         so then, any <b>complex number</b> \(z\) can be thought of as an ordered pair of real numbers.
@@ -69,9 +69,9 @@
             $$z_1+z_2=(x_1+x_2,y_1+y_2)$$
         the <b>product</b> of two complex numbers is defined as follows:
             $$z_1 z_2=(x_1 x_2-y_1 y_2,y_1 x_2+x_1 y_2)$$
-        these definitions of sum and product in \(\mathbb{C}\) become the usual sum and product when restricted to \(\mathbb{R}\).
+        these definitions of sum and product extended into \(\mathbb{C}\) become the usual sum and product when restricted back to \(\mathbb{R}\).
             <br><br>
-        with these definitions of addition and multiplication, you can deduce the following about any \(z\in\mathbb{C}\):
+        we can now deduce the following about any \(z\):
             $$
                 z=(x,y)=(x,0)+(0,y)=(x,0)+(0,1)(y,0)
             $$
@@ -86,16 +86,17 @@
             $$
         so, \(i=\sqrt{-1}\) is a property that <i>results</i> from the definition of multiplication in \(\mathbb{C}\)!
             <br>
-        however, you might notice that the result is actually \(i^2=-1\), so:
+        however, notice that the result is really just \(i^2=-1\), so <i>actually</i>:
             $$
                 i^2=-1\\
                 \Rightarrow i=\sqrt{-1}\text{ and } i=-\sqrt{-1}\\
                 \Rightarrow i=\sqrt{-1}\text{ and} -i=\sqrt{-1}\\
                 \Rightarrow i=-i
             $$
-        this means that \(i\) and \(-i\) are <b>algebraically indistinguishable</b>, since this fact only affects the <i>representations</i> of complex numbers.
+        this means that \(i\) and \(-i\) are <b>algebraically indistinguishable</b>, since choosing \(i=\sqrt{-1}\) or \(i=-\sqrt{-1}\)
+        only affects the <i>representations</i> of complex numbers.
             <br>
-        this is why we defined \(i\) with the coordinate representation \((0,1)\).
+        <i>this</i> is why we defined \(i\) with the coordinate representation \((0,1)\)!
             <br><br>
         Like \(\mathbb{R}\), \(\mathbb{C}\) is a field:
         <ol>
@@ -169,8 +170,7 @@
             $$z_1-z_2=z_1+(-z_2)$$
         the <b>quotient</b> of two complex numbers is defined in terms of multiplicative inverses:
             $$z_1 z_2=z_1 \left(\frac{1}{z_2}\right)$$
-        ...
-
+        
         <hr>
 
         <h2 id="functions">functions</h2>
