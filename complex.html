@@ -100,6 +100,23 @@
             <br><br>
         <i>this</i> is why we defined \(i\) with the coordinate representation \((0,1)\)!
             <br><br>
+        under the cartesian representation, you can basically treat \(i\) as a variable with the added condition that \(i^2=-1\).
+            <br><br>
+        so, the sum of complex numbers can be treated in this way:
+            $$
+                z_1+z_2=(x_1+iy_1)+(x_2+iy_2)\\
+                =(x_1+x_2)+(iy_1+iy_2)\\
+                \therefore z_1+z_2=(x_1+x_2)+i(y_1+y_2)
+            $$
+        and the product of complex numbers can be treated in this way (FOIL):
+            $$
+                z_1 z_2=(x_1+iy_1)(x_2+iy_2)\\
+                =x_1 x_2+iy_1(x_2)+x_1(iy_2)+(i y_1)(i y_2)\\
+                =x_1 x_2+i(y_1 x_2)+i(x_1 y_2)+i^2 (y_1 y_2)\\
+                =x_1 x_2+i(y_1 x_2 + x_1 y_2)- y_1 y_2\\
+                \therefore z_1 z_2=(x_1 x_2 - y_1 y_2)+i(y_1x_2+x_1y_2)
+            $$
+        which is a lot more straightforward than remembering their formal definitions!
         Like \(\mathbb{R}\), \(\mathbb{C}\) is a field:
         <ol>
             <li>
@@ -170,9 +187,67 @@
             $$
         the <b>difference</b> of two complex numbers is defined in terms of additive inverses:
             $$z_1-z_2=z_1+(-z_2)$$
-        the <b>quotient</b> of two complex numbers is defined in terms of multiplicative inverses:
+        the <b>quotient</b> of two complex numbers is defined in terms of multiplicative inverses (where \(\frac{1}{z}:={z}^{-1}\)):
             $$\frac{z_1}{z_2}=z_1 \left(\frac{1}{z_2}\right)=z_1 {z_2}^{-1}$$
-        
+        all the usual properties of quotients in \(\mathbb{R}\) extend into \(\mathbb{C}\), such as:
+            $$
+                \frac{1}{z_1 z_2}=\left(\frac{1}{z_1}\right) \left(\frac{1}{z_2}\right) \text{ since } (z_1 z_2)(z_1 z_2)^{-1}=1=(z_1 z_1^{-1})(z_2 z_2^{-1})=(z_1 z_2)(z_1^{-1} z_2^{-1})\\
+                \\
+                \frac{z_1+z_2}{z_3}=\frac{z_1}{z_3}+\frac{z_2}{z_3} \text{ since } (z_1+z_2){z_3}^{-1}=z_1{z_3}^{-1}+z_2{z_3}^{-1}
+            $$
+        the cancellation law (\(\frac{z_1 z}{z_2 z}=\frac{z_1}{z_2}\)) and the double inverse law (\(\frac{1}{1/z}=(z^{-1})^{-1}=1\)) also follow.
+            <br><br>
+        the <b>binomial formula</b> also extends into \(\mathbb{C}\):
+            $$
+                (z_1+z_2)^n=\sum_{k=0}^{n}\binom{n}{k} {z_1}^k {z_2}^{n-k},\qquad z_1\neq0,z_2\neq0,n=1,2,3,...\\
+                \text{where } \binom{n}{k}=\frac{n!}{k!(n-k)!},\qquad k=0,1,2,...,n
+            $$
+        as well as the <b>triangle inequalities</b>:
+            $$
+                ||z_1|-|z_2||\leq|z_1 + z_2|\leq|z_1|+|z_2|
+            $$
+        since complex numbers can be represented as points on the complex plane, certain geometric intuitions can be applied to them.
+            <br><br>
+        for example, adding two complex numbers is the same as adding two vectors together, tip-to-tail (i.e. coordinate-wise).
+            <br><br>
+        if you compute the distance from a point \(z\) on the complex plane to \((0,0)\), you will get a non-negative real number called the <b>modulus</b> of \(z\), denoted \(|z|\).
+            $$
+                |z|=|x+iy|=\sqrt{x^2+y^2}
+            $$
+        if you recognize the notation, that is beacuse the modulus extends the concept of absolute value in \(\mathbb{R}\) to \(\mathbb{C}\)!
+            <br>
+        naturally, modulus becomes absolute value when restricted back to \(\mathbb{R}\).
+            <br><br>
+        if you reflect a complex number \(z\) over the real axis, you reach the <b>conjugate</b> of \(z\), denoted \(\overline{z}\).
+            $$
+                z=x+iy\Rightarrow \overline{z}=x-iy
+            $$
+        conjugation holds many important properties:
+        <ul>
+            <li>double conjugation law: \(\overline{(\overline{z})}=z\)</li>
+            <li>same modulus as \(z\): \(|\overline{z}|=|z|\)</li>
+            <li>
+                distributes over the basic operations:
+                <ul>
+                    <li>\(\overline{z_1+z_2}=\overline{z_1}+\overline{z_2}\)</li>
+                    <li>\(\overline{z_1-z_2}=\overline{z_1}-\overline{z_2}\)</li>
+                    <li>\(\overline{z_1 z_2}=\overline{z_1}\cdot \overline{z_2}\)</li>
+                    <li>\(\overline{\left(\frac{z_1}{z_2}\right)}=\frac{\overline{z_1}}{\overline{z_2}}\)</li>
+                </ul>
+            </li>
+            <li>\(\text{Re}(z)=\frac{z+\overline{z}}{2}\) and \(\text{Im}(z)=\frac{z-\overline{z}}{2i}\)</li>
+            <li>\(z \overline{z}=|z|^2=x^2+y^2\)</li>
+        </ul>
+            <br>
+        this last property is <i>very</i> useful! you can use it to, for example, show that the modulus is multiplicative:
+            $$
+                |z_1 z_2|^2=(z_1 z_2)\overline{(z_1 z_2)}\\
+                =(z_1 z_2)(\overline{z_1}\cdot \overline{z_2})\\
+                =(z_1\overline{z_1})(z_2 \overline{z_2})\\
+                =|z_1|^2 |z_2|^2\\
+                \therefore |z_1 z_2|=|z_1||z_2|
+            $$
+        <span style="color: var(--woofleBlue);">what's left: polar form, exponential form, roots</span>
         <hr>
 
         <h2 id="functions">functions</h2>
