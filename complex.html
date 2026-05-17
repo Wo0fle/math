@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
-    <link rel="icon" type="image/x-icon" href="./icon.png">
+    <link rel="icon" type="image/x-icon" href="./icon.ico">
     <title>complex analysis</title>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
 </head>
@@ -14,7 +14,7 @@
         
         <a href="./index.html">go home</a></li>
 
-        <div class="prereq">
+        <div class="dashedbox">
             prerequisites:
             <ul>
                 <li><a >calculus</a></li>
@@ -22,7 +22,7 @@
             </ul>
         </div>
 
-        <div class="prereq">
+        <div class="dashedbox">
             table of contents:
             <ul>
                 <li><a href="#intro-to-C">intro to \(\mathbb{C}\)</a></li>
@@ -39,7 +39,137 @@
 
         <h2 id="intro-to-C">intro to \(\mathbb{C}\)</h2>
 
-        complex numbers are lowkey complex
+        you may remember all the way back in your <a >elementary algebra</a> days of the notion of the imaginary number \(i=\sqrt{-1}\).
+            <br><br>
+        in this page, we will reintroduce complex numbers in a rigorous and formal way!
+            <br><br>
+        complex numbers can be thought of as points in the coordinate plane, the same way that real numbers are points on the real line.
+            <br><br>
+        so then, any <b>complex number</b> \(z\) can be thought of as an ordered pair of real numbers.
+            $$z=(x,y),\qquad x,y\in\mathbb{R}$$
+        \(x\) is called the <b>real part</b> of \(z\), denoted \(\text{Re}(z)=x\).
+            <br>
+        \(y\) is called the <b>imaginary part</b> of \(z\), denoted \(\text{Im}(z)=y\).
+            <br><br>
+        thus, numbers of the form \((x,0)\) are on the <b>real axis</b> (and are <b>real numbers</b>), and those of the form \((0,y)\) (with \(y\neq0\))
+        are on the <b>imaginary axis</b> (and are called <b>imaginary numbers</b>).
+            <br><br>
+        together, the real and imaginary axes make up the <b>complex plane</b>, denoted \(\mathbb{C}\).
+            <br><br>
+        two complex numbers are <b>equal</b> when their real parts are equal and their imaginary parts are equal
+        (i.e., they are the same point on the complex plane).
+            $$
+                z_1=z_2\Leftrightarrow
+                \begin{cases}
+                    {x_1=x_2\\
+                    y_1=y_2}
+                \end{cases}
+            $$
+        the <b>sum</b> of two complex numbers is the coordinate-wise addition of their parts:
+            $$z_1+z_2=(x_1+x_2,y_1+y_2)$$
+        the <b>product</b> of two complex numbers is defined as follows:
+            $$z_1 z_2=(x_1 x_2-y_1 y_2,y_1 x_2+x_1 y_2)$$
+        these definitions of sum and product in \(\mathbb{C}\) become the usual sum and product when restricted to \(\mathbb{R}\).
+            <br><br>
+        with these definitions of addition and multiplication, you can deduce the following about any \(z\in\mathbb{C}\):
+            $$
+                z=(x,y)=(x,0)+(0,y)=(x,0)+(0,1)(y,0)
+            $$
+        \((0,1)\) is called the <b>imaginary unit</b>, denoted \(i\).
+            <br><br>
+        this gives rise to the standard <b>cartesian representation</b> of a complex number \(z\):
+            $$z=x+iy,\qquad x,y\in\mathbb{R}$$
+        computing \(i^2\):
+            $$
+                i^2=i\cdot i=(0,1)(0,1)=(0(0)-1(1),0(1)+1(0))=(-1,0)=-1\\
+                \therefore i^2=-1
+            $$
+        so, \(i=\sqrt{-1}\) is a property that <i>results</i> from the definition of multiplication in \(\mathbb{C}\)!
+            <br>
+        however, you might notice that the result is actually \(i^2=-1\), so:
+            $$
+                i^2=-1\\
+                \Rightarrow i=\sqrt{-1}\text{ and } i=-\sqrt{-1}\\
+                \Rightarrow i=\sqrt{-1}\text{ and} -i=\sqrt{-1}\\
+                \Rightarrow i=-i
+            $$
+        this means that \(i\) and \(-i\) are <b>algebraically indistinguishable</b>, since this fact only affects the <i>representations</i> of complex numbers.
+            <br>
+        this is why we defined \(i\) with the coordinate representation \((0,1)\).
+            <br><br>
+        Like \(\mathbb{R}\), \(\mathbb{C}\) is a field:
+        <ol>
+            <li>
+                closure
+                <ul>
+                    <li>\(z_1+z_2\in\mathbb{C}\)</li>
+                    <li>\(z_1 z_2\in\mathbb{C}\)</li>
+                </ul>
+            </li>
+            <li>
+                associativity
+                <ul>
+                    <li>\((z_1+z_2)+z_3=z_1+(z_2+z_3)\)</li>
+                    <li>\((z_1 z_2) z_3=z_1 (z_2 z_3)\)</li>
+                </ul>
+            </li>
+            <li>
+                commutativity
+                <ul>
+                    <li>\(z_1+z_2=z_2+z_1\)</li>
+                    <li>\(z_1 z_2=z_2 z_1\)</li>
+                </ul>
+            </li>
+            <li>
+                distributivity
+                <ul>
+                    <li>\(z(z_1+z_2)=z z_1+z z_2\)</li>
+                </ul>
+            </li>
+            <li>
+                identities
+                <ul>
+                    <li>\(z+0=z\)</li>
+                    <li>\(z(1)=z\)</li>
+                </ul>
+            </li>
+            <li>
+                inverses
+                <ul>
+                    <li>\(\forall z,\exists (-z)\) such that \(z+(-z)=0\)</li>
+                    <li>\(\forall z\neq0,\exists z^{-1}\) such that \(zz'=1\)</li>
+                </ul>
+            </li>
+        </ol>
+            <br>
+        computing \(-z\):
+            $$
+                z+(-z)=0\\
+                \text{Let }z=x+iy,(-z)=u+iv\\
+                \Rightarrow (x+iy)+(u+iv)=0\\
+                \Rightarrow (x+u)+i(y+v)=0+0i\\
+                \Rightarrow x+u=0,\qquad y+v=0\\
+                \Rightarrow -x=u,\qquad -y=v\\
+                \Rightarrow (-z)=(-x)+i(-y)=-x-iy=-(x+iy)\\
+                \therefore -z=-(z)
+            $$
+        so, \(-z\) is defined <i>uniquely</i> for any \(z\).
+            <br>
+        we could also compute \(z^{-1}\) right now, but we'll hold off on that until we have some more useful definitions to make the computation easier.
+            <br><br>
+        the existence of \(z^{-1}\) also implies that if \(z_1 z_2=0\), then \(z_1=0\) or \(z_2=0\).
+            $$
+                z_1 z_2=0\\
+                \text{WLOG, let } z_1\neq0\\
+                \Rightarrow {z_1}^{-1} \text{ is defined}\\
+                \Rightarrow z_2=z_2(z_1 {z_1}^{-1})=(z_2 z_1) {z_1}^{-1}=(z_1 z_2) {z_1}^{-1}=0({z_1}^{-1})\\
+                \therefore z_2=0\\
+            $$
+        the <b>difference</b> of two complex numbers is defined in terms of additive inverses:
+            $$z_1-z_2=z_1+(-z_2)$$
+        the <b>quotient</b> of two complex numbers is defined in terms of multiplicative inverses:
+            $$z_1 z_2=z_1 \left(\frac{1}{z_2}\right)$$
+        ...
 
         <hr>
 

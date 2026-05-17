@@ -49,13 +49,19 @@ hr {
     border: 1px solid black;
 }
 
-.prereq {
+.dashedbox {
     padding: 3%;
     margin: 3%;
     border: 1px dashed black;
 }
 
-ul {margin-bottom: 0;}
+.solidbox {
+    padding: 3%;
+    margin: 3%;
+    border: 1px solid black;
+}
+
+ul, ol {margin-bottom: 0;}
 
 /***************************************************/
 
