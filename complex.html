@@ -66,9 +66,11 @@
                 \end{cases}
             $$
         the <b>sum</b> of two complex numbers is the coordinate-wise addition of their parts:
-            $$z_1+z_2=(x_1+x_2,y_1+y_2)$$
+            $$z_1+z_2=(x_1,y_1)+(x_2,y_2)=(x_1+x_2,y_1+y_2)$$
         the <b>product</b> of two complex numbers is defined as follows:
-            $$z_1 z_2=(x_1 x_2-y_1 y_2,y_1 x_2+x_1 y_2)$$
+            $$z_1 z_2=(x_1,y_1)(x_2,y_2)=(x_1 x_2-y_1 y_2,y_1 x_2+x_1 y_2)$$
+        i like to remember complex multiplication as "\(\text{(lefts - rights , in + out)}\)."
+            <br><br>
         these definitions of sum and product extended into \(\mathbb{C}\) become the usual sum and product when restricted back to \(\mathbb{R}\).
             <br><br>
         we can now deduce the following about any \(z\):
@@ -91,11 +93,11 @@
                 i^2=-1\\
                 \Rightarrow i=\sqrt{-1}\text{ and } i=-\sqrt{-1}\\
                 \Rightarrow i=\sqrt{-1}\text{ and} -i=\sqrt{-1}\\
-                \Rightarrow i=-i
+                \therefore i=-i \text{ ???}
             $$
         this means that \(i\) and \(-i\) are <b>algebraically indistinguishable</b>, since choosing \(i=\sqrt{-1}\) or \(i=-\sqrt{-1}\)
         only affects the <i>representations</i> of complex numbers.
-            <br>
+            <br><br>
         <i>this</i> is why we defined \(i\) with the coordinate representation \((0,1)\)!
             <br><br>
         Like \(\mathbb{R}\), \(\mathbb{C}\) is a field:
@@ -138,7 +140,7 @@
                 inverses
                 <ul>
                     <li>\(\forall z,\exists (-z)\) such that \(z+(-z)=0\)</li>
-                    <li>\(\forall z\neq0,\exists z^{-1}\) such that \(zz'=1\)</li>
+                    <li>\(\forall z\neq0,\exists z^{-1}\) such that \(zz^{-1}=1\)</li>
                 </ul>
             </li>
         </ol>
@@ -169,7 +171,7 @@
         the <b>difference</b> of two complex numbers is defined in terms of additive inverses:
             $$z_1-z_2=z_1+(-z_2)$$
         the <b>quotient</b> of two complex numbers is defined in terms of multiplicative inverses:
-            $$z_1 z_2=z_1 \left(\frac{1}{z_2}\right)$$
+            $$\frac{z_1}{z_2}=z_1 \left(\frac{1}{z_2}\right)=z_1 {z_2}^{-1}$$
         
         <hr>
 
