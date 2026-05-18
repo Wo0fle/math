@@ -35,10 +35,6 @@
             </ul>
         </div>
 
-        you may remember all the way back in your <a >elementary algebra</a> days of the notion of the imaginary number \(i=\sqrt{-1}\).
-            <br><br>
-        in this page, we will reintroduce complex numbers in a rigorous and formal way!
-
         <hr>
 
         <h2 id="intro-to-C">intro to \(\mathbb{C}\)</h2>
@@ -69,13 +65,15 @@
             $$z_1+z_2=(x_1,y_1)+(x_2,y_2)=(x_1+x_2,y_1+y_2)$$
         the <b>product</b> of two complex numbers is defined as follows:
             $$z_1 z_2=(x_1,y_1)(x_2,y_2)=(x_1 x_2-y_1 y_2,y_1 x_2+x_1 y_2)$$
-        i like to remember complex multiplication as "\(\text{(lefts - rights , in + out)}\)."
+        you can easily remember complex multiplication as "\(\text{(lefts - rights , in + out)}\)."
             <br><br>
         these definitions of sum and product extended into \(\mathbb{C}\) become the usual sum and product when restricted back to \(\mathbb{R}\).
             <br><br>
         we can now deduce the following about any \(z\):
             $$
-                z=(x,y)=(x,0)+(0,y)=(x,0)+(0,1)(y,0)
+                z=(x,y)=(x,0)+(0,y)\\
+                (0,1)(y,0)=(0y-1(0),1y-0(0))=(0,y)\\
+                \therefore z=(x,0)+(0,1)(y,0)
             $$
         \((0,1)\) is called the <b>imaginary unit</b>, denoted \(i\).
             <br><br>
@@ -88,7 +86,7 @@
             $$
         so, \(i=\sqrt{-1}\) is a property that <i>results</i> from the definition of multiplication in \(\mathbb{C}\)!
             <br>
-        however, notice that the result is really just \(i^2=-1\), so <i>actually</i>:
+        however, notice that the result is really \(i^2=-1\), so <i>actually</i>:
             $$
                 i^2=-1\\
                 \Rightarrow i=\sqrt{-1}\text{ and } i=-\sqrt{-1}\\
@@ -98,9 +96,9 @@
         this means that \(i\) and \(-i\) are <b>algebraically indistinguishable</b>, since choosing \(i=\sqrt{-1}\) or \(i=-\sqrt{-1}\)
         only affects the <i>representations</i> of complex numbers.
             <br><br>
-        <i>this</i> is why we defined \(i\) with the coordinate representation \((0,1)\)!
+        <i>this</i> is why we defined \(i\) with the coordinate representation \((0,1)\); it's totally unambiguous!
             <br><br>
-        under the cartesian representation, you can basically treat \(i\) as a variable with the added condition that \(i^2=-1\).
+        since all complex numbers are made of real numbers with a potential added factor of \(i\), you can basically treat \(i\) as a variable with the added condition that \(i^2=-1\).
             <br><br>
         so, the sum of complex numbers can be treated in this way:
             $$
@@ -117,6 +115,7 @@
                 \therefore z_1 z_2=(x_1 x_2 - y_1 y_2)+i(y_1x_2+x_1y_2)
             $$
         which is a lot more straightforward than remembering their formal definitions!
+            <br><br>
         Like \(\mathbb{R}\), \(\mathbb{C}\) is a field:
         <ol>
             <li>
@@ -218,6 +217,13 @@
             <br>
         naturally, modulus becomes absolute value when restricted back to \(\mathbb{R}\).
             <br><br>
+        also, these inequalities follow directly from the definition of the modulus:
+            $$
+                \text{Re}(z)\leq|\text{Re}(z)|\leq|z|\\
+                \text{Im}(z)\leq|\text{Im}(z)|\leq|z|
+            $$
+        i.e., the real/imaginary parts of \(z\) will never exceed the total length of \(z\), the same way each leg of a right triangle will never be longer than its hypotenuse.
+            <br><br>
         if you reflect a complex number \(z\) over the real axis, you reach the <b>conjugate</b> of \(z\), denoted \(\overline{z}\).
             $$
                 z=x+iy\Rightarrow \overline{z}=x-iy
@@ -239,7 +245,9 @@
             <li>\(z \overline{z}=|z|^2=x^2+y^2\)</li>
         </ul>
             <br>
-        this last property is <i>very</i> useful! you can use it to, for example, show that the modulus is multiplicative:
+        this last property is <i>very</i> useful!
+            <br>
+        you can use it to, for example, show that the modulus is multiplicative:
             $$
                 |z_1 z_2|^2=(z_1 z_2)\overline{(z_1 z_2)}\\
                 =(z_1 z_2)(\overline{z_1}\cdot \overline{z_2})\\
@@ -247,7 +255,15 @@
                 =|z_1|^2 |z_2|^2\\
                 \therefore |z_1 z_2|=|z_1||z_2|
             $$
-        <span style="color: var(--woofleBlue);">what's left: polar form, exponential form, roots</span>
+        and also to easily compute \(z^{-1}\):
+            $$
+                z^{-1}=\frac{1}{z}=\frac{1}{z} \frac{\overline{z}}{\overline{z}}=\frac{\overline{z}}{z \overline{z}}=\frac{\overline{z}}{|z|^2}=\frac{x-iy}{x^2+y^2}\\
+                \therefore z^{-1}=\frac{x}{x^2+y^2}-i \frac{y}{x^2+y^2}
+            $$
+        overall, if you are ever dealing with computations where some non-real number is in a place you don't want it to be (such as in the denominator of a fraction),
+        multiplying by the conjugate is a very useful technique since multiplying a complex number by its conjugate <i>always</i> results in a real number!
+            <br><br>
+        <span style="color: var(--woofleBlue);">ADD PICTURES! missing content: polar form, exponential form, roots</span>
         <hr>
 
         <h2 id="functions">functions</h2>
