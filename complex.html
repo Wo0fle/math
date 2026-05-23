@@ -26,8 +26,8 @@
             table of contents:
             <ul>
                 <li><a href="#intro-to-C">intro to \(\mathbb{C}\)</a></li>
-                <li><a href="#functions">functions</a></li>
-                <li><a href="#derivatives">derivatives</a></li>
+                <li><a href="#functions-of-z-and-derivatives">functions of \(z\) and derivatives</a></li>
+                <li><a href="#elementary-functions">elementary functions</a></li>
                 <li><a href="#integrals">integrals</a></li>
                 <li><a href="#series">series</a></li>
                 <li><a href="#residues-and-poles">residues and poles</a></li>
@@ -41,7 +41,7 @@
 
         complex numbers can be thought of as points in the coordinate plane, the same way that real numbers are points on the real line.
             <br><br>
-        so then, any <b>complex number</b> \(z\) can be thought of as an ordered pair of real numbers.
+        so, any <b>complex number</b> \(z\) can be thought of as an ordered pair of real numbers.
             $$z=(x,y),\qquad x,y\in\mathbb{R}$$
         \(x\) is called the <b>real part</b> of \(z\), denoted \(\text{Re}(z)=x\).
             <br>
@@ -50,7 +50,9 @@
         thus, numbers of the form \((x,0)\) are on the <b>real axis</b> (and are <b>real numbers</b>), and those of the form \((0,y)\) (with \(y\neq0\))
         are on the <b>imaginary axis</b> (and are called <b>imaginary numbers</b>).
             <br><br>
-        together, the real and imaginary axes make up the <b>complex plane</b>, denoted \(\mathbb{C}\).
+        together, the real and imaginary axes make up the <b>complex plane</b>.
+            <br><br>
+        the set of all complex numbers (i.e. what the complex plane represents) is denoted \(\mathbb{C}\).
             <br><br>
         two complex numbers are <b>equal</b> when their real parts are equal and their imaginary parts are equal
         (i.e., they are the same point on the complex plane).
@@ -67,21 +69,24 @@
             $$z_1 z_2=(x_1,y_1)(x_2,y_2)=(x_1 x_2-y_1 y_2,y_1 x_2+x_1 y_2)$$
         you can easily remember complex multiplication as "\(\text{(lefts - rights , in + out)}\)."
             <br><br>
-        these definitions of sum and product extended into \(\mathbb{C}\) become the usual sum and product when restricted back to \(\mathbb{R}\).
+        these definitions of sum and product extended into \(\mathbb{C}\) become the "usual" (real-valued) sum and product when restricted back to \(\mathbb{R}\).
             <br><br>
-        we can now deduce the following about any \(z\):
+        from the product, we have exponentiation of a complex number defined in terms of repeated multiplication:
+            $$z^n=(x,y)^n=(x,y)(x,y)(x,y)...(x,y) \text{ (}n\text{ times)},\qquad n=1,2,3,...$$
+        the \((x,y)\) <b>coordinate form</b> of complex numbers works fine,
+        but there is a more useful representation of any complex number \(z\) that we can derive using the sum and product we just defined:
             $$
                 z=(x,y)=(x,0)+(0,y)\\
-                (0,1)(y,0)=(0y-1(0),1y-0(0))=(0,y)\\
+                (0,1)(y,0)=(0y-1(0),1y-0(0))=(0,y)\\\\
                 \therefore z=(x,0)+(0,1)(y,0)
             $$
         \((0,1)\) is called the <b>imaginary unit</b>, denoted \(i\).
             <br><br>
-        this gives rise to the standard <b>cartesian representation</b> of a complex number \(z\):
+        this gives rise to the standard <b>cartesian form</b> of a complex number \(z\):
             $$z=x+iy,\qquad x,y\in\mathbb{R}$$
         computing \(i^2\):
             $$
-                i^2=i\cdot i=(0,1)(0,1)=(0(0)-1(1),0(1)+1(0))=(-1,0)=-1\\
+                i^2=i\cdot i=(0,1)(0,1)=(0(0)-1(1),0(1)+1(0))=(-1,0)=-1\\\\
                 \therefore i^2=-1
             $$
         so, \(i=\sqrt{-1}\) is a property that <i>results</i> from the definition of multiplication in \(\mathbb{C}\)!
@@ -90,7 +95,7 @@
             $$
                 i^2=-1\\
                 \Rightarrow i=\sqrt{-1}\text{ and } i=-\sqrt{-1}\\
-                \Rightarrow i=\sqrt{-1}\text{ and} -i=\sqrt{-1}\\
+                \Rightarrow i=\sqrt{-1}\text{ and} -i=\sqrt{-1}\\\\
                 \therefore i=-i \text{ ???}
             $$
         this means that \(i\) and \(-i\) are <b>algebraically indistinguishable</b>, since choosing \(i=\sqrt{-1}\) or \(i=-\sqrt{-1}\)
@@ -103,7 +108,7 @@
         so, the sum of complex numbers can be treated in this way:
             $$
                 z_1+z_2=(x_1+iy_1)+(x_2+iy_2)\\
-                =(x_1+x_2)+(iy_1+iy_2)\\
+                =(x_1+x_2)+(iy_1+iy_2)\\\\
                 \therefore z_1+z_2=(x_1+x_2)+i(y_1+y_2)
             $$
         and the product of complex numbers can be treated in this way (FOIL):
@@ -111,7 +116,7 @@
                 z_1 z_2=(x_1+iy_1)(x_2+iy_2)\\
                 =x_1 x_2+iy_1(x_2)+x_1(iy_2)+(i y_1)(i y_2)\\
                 =x_1 x_2+i(y_1 x_2)+i(x_1 y_2)+i^2 (y_1 y_2)\\
-                =x_1 x_2+i(y_1 x_2 + x_1 y_2)- y_1 y_2\\
+                =x_1 x_2+i(y_1 x_2 + x_1 y_2)- y_1 y_2\\\\
                 \therefore z_1 z_2=(x_1 x_2 - y_1 y_2)+i(y_1x_2+x_1y_2)
             $$
         which is a lot more straightforward than remembering their formal definitions!
@@ -169,19 +174,19 @@
                 \Rightarrow (x+u)+i(y+v)=0+0i\\
                 \Rightarrow x+u=0,\qquad y+v=0\\
                 \Rightarrow -x=u,\qquad -y=v\\
-                \Rightarrow (-z)=(-x)+i(-y)=-x-iy=-(x+iy)\\
+                \Rightarrow (-z)=(-x)+i(-y)=-x-iy=-(x+iy)\\\\
                 \therefore -z=-(z)
             $$
-        so, \(-z\) is defined <i>uniquely</i> for any \(z\).
-            <br>
+        who would have guessed?
+            <br><br>
         we could also compute \(z^{-1}\) right now, but we'll hold off on that until we have some more useful definitions to make the computation easier.
             <br><br>
-        the existence of \(z^{-1}\) also implies that if \(z_1 z_2=0\), then \(z_1=0\) or \(z_2=0\).
+        the existence of \(z^{-1}\) also implies that the <b>zero-product property</b> extends into \(\mathbb{C}\) (if \(z_1 z_2=0\), then \(z_1=0\) or \(z_2=0\)).
             $$
                 z_1 z_2=0\\
                 \text{WLOG, let } z_1\neq0\\
                 \Rightarrow {z_1}^{-1} \text{ is defined}\\
-                \Rightarrow z_2=z_2(z_1 {z_1}^{-1})=(z_2 z_1) {z_1}^{-1}=(z_1 z_2) {z_1}^{-1}=0({z_1}^{-1})\\
+                \Rightarrow z_2=z_2(z_1 {z_1}^{-1})=(z_2 z_1) {z_1}^{-1}=(z_1 z_2) {z_1}^{-1}=0({z_1}^{-1})\\\\
                 \therefore z_2=0\\
             $$
         the <b>difference</b> of two complex numbers is defined in terms of additive inverses:
@@ -189,13 +194,13 @@
         the <b>quotient</b> of two complex numbers is defined in terms of multiplicative inverses (where \(\frac{1}{z}:={z}^{-1}\)):
             $$\frac{z_1}{z_2}=z_1 \left(\frac{1}{z_2}\right)=z_1 {z_2}^{-1}$$
         all the usual properties of quotients in \(\mathbb{R}\) extend into \(\mathbb{C}\), such as:
-            $$
-                \frac{1}{z_1 z_2}=\left(\frac{1}{z_1}\right) \left(\frac{1}{z_2}\right) \text{ since } (z_1 z_2)(z_1 z_2)^{-1}=1=(z_1 z_1^{-1})(z_2 z_2^{-1})=(z_1 z_2)(z_1^{-1} z_2^{-1})\\
-                \\
-                \frac{z_1+z_2}{z_3}=\frac{z_1}{z_3}+\frac{z_2}{z_3} \text{ since } (z_1+z_2){z_3}^{-1}=z_1{z_3}^{-1}+z_2{z_3}^{-1}
-            $$
-        the cancellation law (\(\frac{z_1 z}{z_2 z}=\frac{z_1}{z_2}\)) and the double inverse law (\(\frac{1}{1/z}=(z^{-1})^{-1}=1\)) also follow.
-            <br><br>
+        <ul>
+            <li>\(\frac{1}{z_1 z_2}=\left(\frac{1}{z_1}\right) \left(\frac{1}{z_2}\right)\)</li>
+            <li>\(\frac{z_1+z_2}{z_3}=\frac{z_1}{z_3}+\frac{z_2}{z_3}\)</li>
+            <li><b>cancellation law</b>: \(\frac{z_1 z}{z_2 z}=\frac{z_1}{z_2}\)</li>
+            <li><b>double inverse law</b>: \(\frac{1}{1/z}=(z^{-1})^{-1}=1\)</li>
+        </ul>
+            <br>
         the <b>binomial formula</b> also extends into \(\mathbb{C}\):
             $$
                 (z_1+z_2)^n=\sum_{k=0}^{n}\binom{n}{k} {z_1}^k {z_2}^{n-k},\qquad z_1\neq0,z_2\neq0,n=1,2,3,...\\
@@ -230,7 +235,7 @@
             $$
         conjugation holds many important properties:
         <ul>
-            <li>double conjugation law: \(\overline{(\overline{z})}=z\)</li>
+            <li><b>double conjugation law</b>: \(\overline{(\overline{z})}=z\)</li>
             <li>same modulus as \(z\): \(|\overline{z}|=|z|\)</li>
             <li>
                 distributes over the basic operations:
@@ -257,21 +262,78 @@
             $$
         and also to easily compute \(z^{-1}\):
             $$
-                z^{-1}=\frac{1}{z}=\frac{1}{z} \frac{\overline{z}}{\overline{z}}=\frac{\overline{z}}{z \overline{z}}=\frac{\overline{z}}{|z|^2}\\
+                z^{-1}=\frac{1}{z}=\frac{1}{z} \frac{\overline{z}}{\overline{z}}=\frac{\overline{z}}{z \overline{z}}=\frac{\overline{z}}{|z|^2}\\\\
                 \therefore z^{-1}=\frac{\overline{z}}{|z|^2}=\frac{x}{x^2+y^2}-i \frac{y}{x^2+y^2}
             $$
         overall, if you are ever dealing with computations where some non-real number is in a place you don't want it to be (such as in the denominator of a fraction),
         multiplying by the conjugate is a very useful technique since multiplying a complex number by its conjugate <i>always</i> results in a real number!
             <br><br>
-        <span style="color: var(--woofleBlue);">ADD PICTURES! missing content: polar form, exponential form, roots</span>
+        we've spent a lot of time on the cartesian form of complex numbers, but same as the standard \(xy\)-coordinate plane,
+        we can also think of complex numbers in a <i>polar</i> coordinate system.
+            <br><br>
+        that is, instead of thinking of \(z\) in terms of \(x\) and \(y\) coordinates,
+        we can consider \(z\) in terms of the distance from the origin \(r\) and its angle from the positive real axis \(\theta\).
+            $$
+                \text{Re}(z)=x=r\cos{(\theta)},\qquad \text{Im}(z)=y=r\sin{(\theta)}
+            $$
+        so, the <b>polar form</b> of any complex number \(z\) is:
+            $$
+                z=r(\cos{(\theta)}+i\sin{(\theta)}),\qquad r=|z|,\theta=\tan{\left(\frac{y}{x}\right)}
+            $$
+        note a couple of things:
+        <ul>
+            <li>\(\tan{\left(\frac{y}{x}\right)}=\tan{\left(\frac{-y}{-x}\right)}\), so we need to keep track of which quadrant \(z\) is in by looking at \(x\) and \(y\).</li>
+            <li>\(\theta=\tan{\left(\frac{y}{x}\right)}\) has infinitely many solutions since \(\tan\) is \(\pi\)-periodic.</li>
+        </ul>
+            <br>
+        any one of these infinite solutions for \(\theta\) is called an <b>argument</b> of \(z\), and the set of all arguments of \(z\) is denoted \(\text{arg}(z)\).
+            <br><br>
+        if you restrict the value of \(\theta\) to \((-\pi,\pi]\), you get the <b>principal argument</b> of \(z\), denoted \(\text{Arg}(z)\).
+            <br><br>
+        as a shorthand for polar form, let's introduce this notation, called the <b>Euler symbol</b>:
+            $$e^{i\theta}=\cos{(\theta)}+i\sin{(\theta)}$$
+        note that \(e^{i\theta}\) only denotes <b>unit numbers</b> (numbers with modulus \(1\)):
+            $$
+                |e^{i\theta}|=|\cos{(\theta)}+i\sin{(\theta)}|
+                =\sqrt{\cos^2{(\theta)}+\sin^2{(\theta)}}
+                =\sqrt{1}
+                =1
+            $$
+        so, any complex number \(z\) can be written like this (called its <b>exponential form</b>):
+            $$z=re^{i\theta}$$
+        surprisingly, a complex number's exponential form seems to have an exponential function in it (<i>foreshadowing</i>),
+        but for now, think of it simply as notation.
+            <br><br>
+        computing \(e^{i\theta}\) for friendly values of \(\theta\):
+            $$
+                e^{i(0)}=\cos{(0)}+i\sin{(0)}=1+0i=1\\
+                e^{i\left(\frac{\pi}{2}\right)}=\cos{\left(\frac{\pi}{2}\right)}+i\sin{\left(\frac{\pi}{2}\right)}=0+1i=i\\
+                e^{i(\pi)}=\cos{(\pi)}+i\sin{(\pi)}=-1+0i=-1\\
+                e^{i\left(\frac{-\pi}{2}\right)}=\cos{\left(\frac{-\pi}{2}\right)}+i\sin{\left(\frac{-\pi}{2}\right)}=0+(-1)i=-i\\
+            $$
+        some properties of the Euler symbol that are useful:
+        <ul>
+            <li>it's multiplicative: \(e^{i\theta_1}e^{i\theta_2}=e^{i(\theta_1+\theta_2)}\)</li>
+            <li>the conjugate is its inverse: \(\overline{(e^{i\theta})}=e^{-i\theta}=\frac{1}{e^{i\theta}}\)</li>
+        </ul>
+            <br>
+        ...
+            <br><br><span style="color: var(--woofleBlue);">ADD PICTURES! missing content: summary of forms of z, geometric intutions + terminology</span>
         <hr>
 
-        <h2 id="functions">functions</h2>
-
+        <h2 id="functions-of-z-and-derivatives">functions of \(z\) and derivatives</h2>
+        
+        <span style="color: var(--woofleBlue);">
+            funcs, lims, cont, derivs, CR eqs (cartesian, polar, complex), "analytic" and its consequences
+        </span>
         <hr>
 
-        <h2 id="derivatives">derivatives</h2>
-
+        <h2 id="elementary-functions">elementary functions</h2>
+        
+        <span style="color: var(--woofleBlue);">
+            explain roots, powers, and ln here i assume (idk i havent gotten to this part of class yet lol)
+        </span>
+        
         <hr>
 
         <h2 id="integrals">integrals</h2>
