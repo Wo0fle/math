@@ -26,8 +26,7 @@
         <div class="dashedbox">
             table of contents:
             <ul>
-                <li><a href="#sets">intro to sets</a></li>
-                <li><a href="#logic">formal logic</a></li>
+                <li><a href="#intro-to-formal-logic-and-sets">intro to formal logic and sets</a></li>
                 <li><a href="#quantifiers">quantifiers</a></li>
                 <li><a href="#counting">counting</a></li>
                 <li><a href="#proofs">proofs</a></li>
@@ -39,14 +38,206 @@
             </ul>
         </div>
 
+        a lot of the math you've learned up to this point is about learning computation techniques, but how were these techniques
+        <i>created</i>? and more importantly, how do we <i>know</i> that they actually work?
+            <br><br>
+        this page will teach you about a logical system that mathematicians use to justify (and invent) math! 
+        
         <hr>
 
-        <h2 id="sets">intro to sets</h2>
+        <h2 id="intro-to-formal-logic-and-sets">intro to formal logic and sets</h2>
 
-        <hr>
-
-        <h2 id="logic">formal logic</h2>
-
+        a <b>proposition</b> is a truth-apt declarative sentence.
+        <ul>
+            <li><b>truth-apt</b>: capable of being <b>true</b> or <b>false</b>, but <i>not both</i>.</li>
+            <li><b>declarative</b>: defines a relationship or asserts a specific state.</li>
+        </ul>
+            <br>
+        so basically, propositions are sentences which proclaim something and are objectively true or false.
+        <ul>
+            <li>
+                "\(6>7\)" <i>is</i> a proposition:
+                <ul>
+                    <li>
+                        proclaims that the value \(6\) is strictly greater than the value \(7\).
+                    </li>
+                    <li>
+                        its <b>truth value</b> (i.e. "trueness" or "falseness") can be objectively verified using known mathematical facts.
+                    </li>
+                </ul>
+            </li><br>
+            <li>
+                "\(\text{the creator of this site is extremely attractive to everyone}\)" <i>is not</i> a proposition:
+                <ul>
+                    <li>
+                        proclaims that everyone believes that the creator of this website is extremely attractive.
+                    </li>
+                    <li>
+                        since attractiveness cannot be objectively verified using known mathematical facts,
+                        we can't meaningfully assign a truth value to it (even though i'm <i>sure</i> that <i>everyone</i>, including <i>you</i>, believes this).
+                    </li>
+                </ul>
+            </li><br>
+            <li>
+                "\(\text{hello}\)" <i>is not</i> a proposition:
+                <ul>
+                    <li>
+                        hi! anyway, this sentence doesn't proclaim anything.
+                    </li>
+                    <li>
+                        since this sentence isn't declarative, it also doesn't make sense to assign a truth value to it.
+                    </li>
+                </ul>
+            </li>
+        </ul>
+            <br>
+        as a shorthand, we can denote propositions with letters:
+            $$
+                P=\text{Philadelphia is located in the USA}\\
+                Q=\text{Mexico City is located in China}
+            $$
+        we can combine propositions using <b>connectives</b> to form more complex propositions:
+        <ul>
+            <li><b>and</b> (<b>conjunction</b>): \(P\wedge Q\)</li>
+            <li><b>or</b> (<b>disjunction</b>): \(P\vee Q\)</li>
+            <li><b>not</b> (<b>negation</b>): \(\neg P\)</li>
+        </ul>
+            $$
+                P\wedge Q=\text{Philadelphia is located in the USA and Mexico City is located in China}\\
+                P\vee Q=\text{Philadelphia is located in the USA or Mexico City is located in China}\\
+                \neg P=\text{not (Philadelphia is located in the USA)}=\text{Philadelphia is not located in the USA}
+            $$
+        these connectives work the same way that logic gates do:
+        <ul>
+            <li>\(P\wedge Q\) is true if both \(P\) and \(Q\) are true.</li>
+            <li>\(P\vee Q\) is true if either \(P\) or \(Q\) is true (or if both are true).</li>
+            <li>\(\neg P\) is true if \(P\) is false.</li>
+        </ul>
+            <br>
+        we can summarize all possible output truth values for different input truth values using <b>truth tables</b>:
+            <!-- thank you sm: https://isaurssaurav.github.io/mathjax-table-generator/ -->
+            $$
+                \begin{array}{|c|c|}\hline P & Q & P\wedge Q \\ \hline T & T & T \\ \hline T & F & F \\ \hline F & T & F \\ \hline F & F & F \\ \hline  \end{array}
+                \qquad
+                \begin{array} {|c|c|}\hline P & Q & P\vee Q \\ \hline T & T & T \\ \hline T & F & T \\ \hline F & T & T \\ \hline F & F & F \\ \hline  \end{array}
+            $$
+        we can check if two propositions are <b>logically equivalent</b> (denoted \(\equiv\)) by using a truth table to check if their outputs are the same for all possible inputs.
+            <br><br>
+        for example:
+            $$
+                \begin{array} {|c|c|}\hline P & Q & \neg(P\wedge Q) \\ \hline T & T & F \\ \hline T & F & T \\ \hline F & T & T \\ \hline F & F & T \\ \hline  \end{array}
+                \quad\text{matches}\quad
+                \begin{array} {|c|c|}\hline P & Q & \neg P\vee\neg Q \\ \hline T & T & F \\ \hline T & F & T \\ \hline F & T & T \\ \hline F & F & T \\ \hline  \end{array}
+            $$
+        so we know that \(\neg(P\wedge Q)\equiv\neg P\vee\neg Q\)!
+            <br><br>
+        some more formal language:
+        <ul>
+            <li>
+                <b>premise</b>: a proposition that is assumed to be true (for the sake of argument).
+            </li>
+            <li>
+                <b>argument</b>: a series of logical steps based on the initial premises (used to form a conclusion).
+            </li>
+            <li>
+                <b>conclusion</b>: (supposedly) the result of an argument.
+                <ul><li>
+                    i say "supposedly" because if you make a mistake during an arugment, the "conclusion" you 
+                    draw would be <b>invalid</b>. if the argument is solid, the conclusion is <b>valid</b>.
+                </li></ul>
+            </li>
+        </ul>
+            <br>
+        to present the conclusion at the end of an argument, we can use the word "<b>therefore</b>" (denoted by \(\therefore\)).
+            <br><br>
+        here's a symbolic example of an argument:
+            $$
+                \begin{array}{c}
+                    P\vee Q \\
+                    \neg Q \\
+                    \hline
+                    \therefore P
+                \end{array}
+            $$
+        here, \(P\) and \(Q\) are propositions, \(P\vee Q\) and \(\neg Q\) are premises, and the conclusion is \(P\).
+            <br><br> 
+        in words:
+            $$
+                \begin{array}{c}
+                    P\text{ or }Q\text{ is true}\equiv P\text{ is true or }Q\text{ is true}\\
+                    \text{not }Q\text{ is true}\equiv Q\text{ is false}\\
+                    \hline
+                    \text{therefore, }P\text{ must be true}
+                \end{array}
+            $$
+        the same way that numbers and operations have laws that tell you how you are allowed to manipulate expressions,
+        so do propositions and connectives!
+        <ol>
+            <li>
+                <b>idempotent laws</b>:
+                <ul>
+                    <li>\(P\wedge P=P\)</li>
+                    <li>\(P\vee P=P\)</li>
+                </ul>
+            </li>
+            <li>
+                <b>double negation law</b>:
+                <ul>
+                    <li>\(\neg(\neg P)=P\)</li>
+                </ul>
+            </li>
+            <li>
+                <b>commutative laws</b>:
+                <ul>
+                    <li>\(P\wedge Q\equiv Q\wedge P\)</li>
+                    <li>\(P\vee Q\equiv Q\vee P\)</li>
+                </ul>
+            </li>
+            <li>
+                <b>associative laws</b>:
+                <ul>
+                    <li>\(P\wedge (Q\wedge R)\equiv(P\wedge Q)\wedge R\)</li>
+                    <li>\(P\vee (Q\vee R)\equiv(P\vee Q)\vee R\)</li>
+                </ul>
+            </li>
+            <li>
+                <b>distributive laws</b>:
+                <ul>
+                    <li>\(P\wedge(Q\vee R)\equiv(P\wedge Q)\vee(P\wedge R)\)</li>
+                    <li>\(P\vee(Q\wedge R)\equiv(P\vee Q)\wedge(P\vee R)\)</li>
+                </ul>
+            </li>
+            <li>
+                <b>DeMorgan's laws</b>:
+                <ul>
+                    <li>\(\neg(P\wedge Q)\equiv\neg P\vee\neg Q\)</li>
+                    <li>\(\neg(P\vee Q)\equiv\neg P\wedge\neg Q\)</li>
+                </ul>
+            </li>
+            <li>
+                <b>absorption laws</b>:
+                <ul>
+                    <li>\(P\wedge(P\vee Q)\equiv P\)</li>
+                    <li>\(P\vee(P\wedge Q)\equiv P\)</li>
+                </ul>
+            </li>
+        </ol>
+            <br>
+        a proposition which is always true is called a <b>tautology</b> (denoted \(\top\)):
+            $$P\vee\neg P\equiv\top$$
+        and a proposition which is always false is called a <b>contradiction</b> (denoted \(\bot\)):
+            $$P\wedge\neg P\equiv\bot$$
+        tautologies and contradictions have their own laws as well, regarding how they interact with other propositions:
+        <ul>
+            <li>\(P\vee\top\equiv\top\)</li>
+            <li>\(P\wedge\top\equiv P\)</li><br>
+            <li>\(P\vee\bot\equiv P\)</li>
+            <li>\(P\wedge\bot\equiv\bot\)</li><br>
+            <li>\(\neg\top\equiv\bot\)</li>
+            <li>\(\neg\bot\equiv\top\)</li>
+        </ul>
+            <br>
+        <span style="color: var(--woofleBlue);">is my definition of argument correct? idk ill have to check</span>
         <hr>
 
         <h2 id="quantifiers">quantifiers</h2>
