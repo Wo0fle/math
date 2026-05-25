@@ -373,9 +373,9 @@
             <br><br>
         for \(\epsilon>0\), the \(\epsilon\)<b>-neighborhood</b> of \(z_0\) (denoted \(B_{\epsilon}(z_0)\)) is the open disk of radius \(\epsilon\) centered at \(z_0\).
             $$B_{\epsilon}(z_0)=\{z\in\mathbb{C}:|z-z_0|<\epsilon\}$$
-        the <b>punctured</b> \(\epsilon\)<b>-neighborhood</b> of \(z_0\) is the same as above, except it doesn't include \(z_0\) itself.
-            $$\overline{B_{\epsilon}}(z_0)=B_{\epsilon}(z_0)\backslash\{z_0\}$$
-        these are often shortened simply "neighborhoods" and "punctured neighborhoods" when their radii are arbitrary.
+        the <b>deleted</b> (or <b>punctured</b>) \(\epsilon\)<b>-neighborhood</b> of \(z_0\) is the same as above, except it doesn't include \(z_0\) itself.
+            $$B^*_{\epsilon}(z_0)=B_{\epsilon}(z_0)\backslash\{z_0\}$$
+        these are often shortened simply "neighborhoods" and "deleted neighborhoods" when their radii are arbitrary.
             <br><br>
         for any \(S\subseteq\mathbb{C}\):
         <ul>
@@ -406,9 +406,6 @@
             <li>\(S\) is <b>connected</b> if any two points in it can be connected by a finite number of straight lines which share endpoints (called a <b>polygonal path</b>) that lie entirely in it.</li>
         </ul>
             $$\text{another W pic}$$
-        something interesting about this definition for connectedness: circles are <i>NOT</i> connected
-        since their perimeters have no thickness, so no polygonal path can connect any two points on a circle!
-            <br><br>
         <ul>
             <li>\(S\) is <b>bounded</b> if there exists a neighborhood centered at \(0\) that contains all of \(S\).</li>
         </ul>
@@ -422,8 +419,8 @@
         </ul>
             $$\text{another W pic}$$
         finally, the <b>accumulation set</b> of \(S\) (denoted \(\text{Acc}(S)\)) is the set of all points \(z\) where an arbitrarily
-        small punctured neighborhood around \(z\) intersects \(S\).
-            $$\text{Acc}(S)=\{z\in\mathbb{C}:\forall\epsilon>0,\overline{B_\epsilon}(z)\cap S\neq\emptyset\}$$
+        small deleted neighborhood around \(z\) intersects \(S\).
+            $$\text{Acc}(S)=\{z\in\mathbb{C}:\forall\epsilon>0,B^*_\epsilon(z)\cap S\neq\emptyset\}$$
         think of \(\text{Acc}(S)\) as the set of points which \(S\) gets arbitrarily close to, and which may or may not be in S.
             $$\text{maybe a W pic?}$$
         any point in \(\text{Acc}(S)\) is called an <b>accumulation point</b> or a <b>limit point</b>.
