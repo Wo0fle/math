@@ -80,7 +80,7 @@
             <br><br>
         from the product, we have exponentiation of a complex number defined in terms of repeated multiplication:
             $$z^n=(x,y)^n=(x,y)(x,y)(x,y)...(x,y) \text{ (}n\text{ times)},\qquad n=1,2,3,...$$
-        the \((x,y)\) <b>coordinate form</b> of complex numbers works fine,
+        the \((x,y)\) <b>coordinate-pair form</b> of complex numbers works fine,
         but there is a more useful representation of any complex number \(z\) that we can derive using the sum and product we just defined:
             $$
                 z=(x,y)=(x,0)+(0,y)\\
@@ -108,7 +108,7 @@
         this means that \(i\) and \(-i\) are <b>algebraically indistinguishable</b>, since choosing \(i=\sqrt{-1}\) or \(i=-\sqrt{-1}\)
         only affects the <i>representations</i> of complex numbers.
             <br><br>
-        <i>this</i> is why we defined \(i\) with the coordinate representation \((0,1)\); it's totally unambiguous!
+        <i>this</i> is why we defined \(i\) with the coordinate-pair representation \((0,1)\); it's totally unambiguous!
             <br><br>
         since all complex numbers are made of real numbers with a potential added factor of \(i\), you can basically treat \(i\) as a variable with the added condition that \(i^2=-1\).
             <br><br>
@@ -128,7 +128,7 @@
             $$
         which is a lot more straightforward than remembering their formal definitions!
             <br><br>
-        Like \(\mathbb{R}\), \(\mathbb{C}\) is a field:
+        Like \(\mathbb{R}\), \(\mathbb{C}\) is a field, so  it also has the following properties:
         <ol>
             <li>
                 closure
@@ -188,7 +188,7 @@
             <br><br>
         we could also compute \(z^{-1}\) right now, but we'll hold off on that until we have some more useful definitions to make the computation easier.
             <br><br>
-        the existence of \(z^{-1}\) also implies that the <b>zero-product property</b> extends into \(\mathbb{C}\) (if \(z_1 z_2=0\), then \(z_1=0\) or \(z_2=0\)).
+        the existence of \(z^{-1}\) also implies that the <b>zero-product property</b> extends into \(\mathbb{C}\) (\(z_1 z_2=0\Rightarrow z_1=0\vee z_2=0\)).
             $$
                 z_1 z_2=0\\
                 \text{WLOG, let } z_1\neq0\\
@@ -198,7 +198,7 @@
             $$
         the <b>difference</b> of two complex numbers is defined in terms of additive inverses:
             $$z_1-z_2=z_1+(-z_2)$$
-        the <b>quotient</b> of two complex numbers is defined in terms of multiplicative inverses (where \(\frac{1}{z}:={z}^{-1}\)):
+        and the <b>quotient</b> of two complex numbers is defined in terms of multiplicative inverses (where \(\frac{1}{z}:={z}^{-1}\)):
             $$\frac{z_1}{z_2}=z_1 \left(\frac{1}{z_2}\right)=z_1 {z_2}^{-1}$$
         all the usual properties of quotients in \(\mathbb{R}\) extend into \(\mathbb{C}\), such as:
         <ul>
@@ -210,16 +210,15 @@
             <br>
         the <b>binomial formula</b> also extends into \(\mathbb{C}\):
             $$
-                (z_1+z_2)^n=\sum_{k=0}^{n}\binom{n}{k} {z_1}^k {z_2}^{n-k},\qquad z_1\neq0,z_2\neq0,n=1,2,3,...\\
-                \text{where } \binom{n}{k}=\frac{n!}{k!(n-k)!},\qquad k=0,1,2,...,n
+                (z_1+z_2)^n=\sum_{k=0}^{n}\binom{n}{k} {z_1}^k {z_2}^{n-k},\qquad z_1\neq0,z_2\neq0,n=1,2,3,...
             $$
         as well as the <b>triangle inequalities</b>:
             $$
                 ||z_1|-|z_2||\leq|z_1 + z_2|\leq|z_1|+|z_2|
             $$
-        since complex numbers can be represented as points on the complex plane, certain geometric intuitions can be applied to them.
+        since complex numbers can be represented as points on the complex plane, certain geometric intuitions you are already familar with can be applied to them.
             <br><br>
-        for example, adding two complex numbers is the same as adding two vectors together, tip-to-tail (i.e. coordinate-wise).
+        for example, adding two complex numbers is the same as adding two vectors together tip-to-tail (i.e. coordinate-wise).
             <br><br>
         if you compute the distance from a point \(z\) on the complex plane to \((0,0)\), you will get a non-negative real number called the <b>modulus</b> of \(z\), denoted \(|z|\).
             $$
@@ -238,7 +237,7 @@
             <br><br>
         if you reflect a complex number \(z\) over the real axis, you reach the <b>conjugate</b> of \(z\), denoted \(\overline{z}\).
             $$
-                z=x+iy\Rightarrow \overline{z}=x-iy
+                z=x+iy\quad\Leftrightarrow\quad\overline{z}=x-iy
             $$
         conjugation holds many important properties:
         <ul>
@@ -289,14 +288,21 @@
             $$
         note a couple of things:
         <ul>
-            <li>\(\tan{\left(\frac{y}{x}\right)}=\tan{\left(\frac{-y}{-x}\right)}\), so we need to keep track of which quadrant \(z\) is in by looking at \(x\) and \(y\).</li>
-            <li>\(\theta=\tan{\left(\frac{y}{x}\right)}\) has infinitely many solutions since \(\tan\) is \(\pi\)-periodic.</li>
+            <li>
+                \(\tan{\left(\frac{y}{x}\right)}=\tan{\left(\frac{-y}{-x}\right)}\), so we need to keep track of which quadrant \(z\) is in by looking at \(x\) and \(y\).
+                <ul><li>you better have the unit circle memorized!</li></ul>
+            </li><br>
+            <li>
+                \(\theta=\tan{\left(\frac{y}{x}\right)}\) has infinitely many solutions.
+                <ul><li>if you rotate any complex number by \(2\pi\), it'll go back to the same spot it was originally in, except its angle will be \(2\pi\) greater; \(\theta\) is \(2\pi\)-periodic!</li></ul>
+            </li>
         </ul>
             <br>
         any one of these infinite solutions for \(\theta\) is called an <b>argument</b> of \(z\), and the set of all arguments of \(z\) is denoted \(\text{arg}(z)\).
             <br><br>
         if you restrict the value of \(\theta\) to \((-\pi,\pi]\), you get the <b>principal argument</b> of \(z\), denoted \(\text{Arg}(z)\).
-            <br><br>
+        <ul><li>\(-\pi\) isn't included to avoid ambiguity on what the principal argument of a negative real number is: it'll always be \(\pi\).</li></ul>
+            <br>
         as a shorthand for polar form, let's introduce this notation, called the <b>Euler symbol</b>:
             $$e^{i\theta}=\cos{(\theta)}+i\sin{(\theta)}$$
         note that \(e^{i\theta}\) only denotes <b>unit numbers</b> (numbers with modulus \(1\)):
@@ -308,7 +314,7 @@
             $$
         so, any complex number \(z\) can be written like this (called its <b>exponential form</b>):
             $$z=re^{i\theta}$$
-        surprisingly, a complex number's exponential form seems to have an exponential function in it (<i>foreshadowing</i>),
+        surprisingly, a complex number's <i>exponential</i> form seems to have an <i>exponential</i> function in it (<i>foreshadowing</i>),
         but for now, think of it simply as notation.
             <br><br>
         computing \(e^{i\theta}\) for friendly values of \(\theta\):
@@ -320,12 +326,107 @@
             $$
         some properties of the Euler symbol that are useful:
         <ul>
-            <li>it's multiplicative: \(e^{i\theta_1}e^{i\theta_2}=e^{i(\theta_1+\theta_2)}\)</li>
-            <li>the conjugate is its inverse: \(\overline{(e^{i\theta})}=e^{-i\theta}=\frac{1}{e^{i\theta}}\)</li>
+            <li><b>exponential property</b>: \(e^{i\theta_1}e^{i\theta_2}=e^{i(\theta_1+\theta_2)}\)</li>
+            <li>its conjugate is its inverse: \(\overline{(e^{i\theta})}=e^{-i\theta}=\frac{1}{e^{i\theta}}\)</li>
         </ul>
             <br>
-        ...
-            <br><br><span style="color: var(--woofleBlue);">ADD PICTURES! missing content: summary of forms of z, geometric intutions + terminology</span>
+        both the cartesian and exponential forms have their own advantages and disadvantages during computation,
+        so it is important to know how to transition between them using the polar form:
+            $$
+                \begin{array}{c|c|c}
+                    \text{cartesian} & \text{polar} & \text{exponential}\\
+                    \hline z=x+iy & \begin{matrix}z=\sqrt{x^2+y^2}(\frac{x}{\sqrt{x^2+y^2}}+i\frac{y}{\sqrt{x^2+y^2}})\\=r(\cos{(\theta)}+i\sin{(\theta)})\end{matrix} & z=re^{i\theta}
+                \end{array}
+            $$
+        now that we've defined complex numbers, basic operations using them, and their different representations, we should
+        see how it all looks geometrically!
+            <br><br>
+        here's a graphic summarizing the representations of any complex number:
+            $$\text{visual of coordinate-pair,cartesian,polar,exp}$$
+        as mentioned before, addition and subtraction are the same as for vectors:
+            $$
+                \begin{matrix}
+                    \text{pic } +\\
+                    z_1+z_2=(x_1+x_2)+i(y_1+y_2)
+                \end{matrix}
+                \qquad
+                \begin{matrix}
+                    \text{pic } -\\
+                    z_1-z_2=(x_1-x_2)+i(y_1-y_2)
+                \end{matrix}
+            $$
+        since the Euler symbol has the exponential property, multiplication and division simply multiplies or divides moduli and adds or subtracts arguments:
+            $$
+                \begin{matrix}
+                    \text{pic } \cdot\\
+                    z_1 z_2=r_1 r_2 e^{i(\theta_1+\theta_2)}
+                \end{matrix}
+                \qquad
+                \begin{matrix}
+                    \text{pic }/\\
+                    \frac{z_1}{z_2}=\frac{r_1}{r_2} e^{i(\theta_1-\theta_2)}
+                \end{matrix}
+            $$
+        and finally, as mentioned before, conjugation reflects across the real axis:
+            $$\text{reflection across Re... do i mention that "negatives" reflect across the line y=-x now?}$$
+        since we thinking geometrically, we should also define some important regions of the complex plane and terminology relating to those regions.
+            <br><br>
+        for \(\epsilon>0\), the \(\epsilon\)<b>-neighborhood</b> of \(z_0\) (denoted \(B_{\epsilon}(z_0)\)) is the open disk of radius \(\epsilon\) centered at \(z_0\).
+            $$B_{\epsilon}(z_0)=\{z\in\mathbb{C}:|z-z_0|<\epsilon\}$$
+        the <b>punctured</b> \(\epsilon\)<b>-neighborhood</b> of \(z_0\) is the same as above, except it doesn't include \(z_0\) itself.
+            $$\overline{B_{\epsilon}}(z_0)=B_{\epsilon}(z_0)\backslash\{z_0\}$$
+        these are often shortened simply "neighborhoods" and "punctured neighborhoods" when their radii are arbitrary.
+            <br><br>
+        for any \(S\subseteq\mathbb{C}\):
+        <ul>
+            <li>\(z_0\) is an <b>interior</b> point of \(S\) if there is a neighborhood around it that lies entirely <i>inside</i> of \(S\).</li>
+            <li>\(z_0\) is an <b>exterior</b> point of \(S\) if there is a neighborhood around it that lies entirely <i>outside</i> of \(S\).</li>
+            <li>\(z_0\) is a <b>boundary</b> point of \(S\) if it's niether interior nor exterior to \(S\) (i.e. every nieghborhood around it contains interior and exterior points of \(S\)).</li>
+        </ul>
+            $$\text{the amazing image i have in my notes}$$
+        naturally, the <b>interior</b> of \(S\) is the set of all its interior points,
+        the <b>exterior</b> of \(S\) is the set of all its exterior points,
+        and the <b>boundary</b> of \(S\) is the set of all its boundary points (denoted \(\partial S\)).
+        <ul>
+            <li>
+                \(S\) is <b>open</b> if every point in \(S\) is an interior point.
+                <ul><li>i.e., no part of \(\partial S\) is in \(S\).</li></ul>
+            </li>
+            <li>
+                \(S\) is <b>closed</b> if its complement \(\mathbb{C}\backslash S\) is open.
+                <ul><li>i.e., all of \(\partial S\) is in \(S\)</li><li>\(\partial S\cup S\) is called the <b>closure</b> of \(S\).</li></ul>
+            </li>
+        </ul>
+            <br>
+        <i>sets are not doors</i>: they can be both closed and open (creatively denoted "<b>clopen</b>"),
+        or niether open nor closed (there's no standard name for this, but i'll call a set like this a <b>NOOC</b>, short for "not open or closed").
+            $$\text{pic of open,closed sets and closure of a set}$$
+        <ul>
+            <li>\(S\) is <b>convex</b> if any two points in it can be connected by a single straight line that lies entirely in it.</li>
+            <li>\(S\) is <b>connected</b> if any two points in it can be connected by a finite number of straight lines which share endpoints (called a <b>polygonal path</b>) that lie entirely in it.</li>
+        </ul>
+            $$\text{another W pic}$$
+        something interesting about this definition for connectedness: circles are <i>NOT</i> connected
+        since their perimeters have no thickness, so no polygonal path can connect any two points on a circle!
+            <br><br>
+        <ul>
+            <li>\(S\) is <b>bounded</b> if there exists a neighborhood centered at \(0\) that contains all of \(S\).</li>
+        </ul>
+            $$\text{another W pic}$$
+        <ul>
+            <li>\(S\) is a <b>domain</b> if it is open and connected.</li>
+            <li>
+                \(S\) is a <b>region</b> if it is connected and all its points are either interior or boundary points.
+                <ul><li>i.e., it's a domain, plus possibly some part of its boundary.</li></ul>
+            </li>
+        </ul>
+            $$\text{another W pic}$$
+        finally, the <b>accumulation set</b> of \(S\) (denoted \(\text{Acc}(S)\)) is the set of all points \(z\) where an arbitrarily
+        small punctured nieghborhood around \(z\) intersects \(S\).
+            $$\text{Acc}(S)=\{z\in\mathbb{C}:\forall\epsilon>0,\overline{B_\epsilon}(z)\cap S\neq\emptyset\}$$
+        think of \(\text{Acc}(S)\) as the set of points which \(S\) gets arbitrarily close to, but doesn't actually include.
+            $$\text{maybe a W pic?}$$
+        any point in \(\text{Acc}(S)\) is called an <b>accumulation point</b> or a <b>limit point</b>.
         <hr>
 
         <h2 id="functions-of-z-and-derivatives">functions of \(z\) and derivatives</h2>
