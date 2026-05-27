@@ -1,5 +1,5 @@
 # math
 
-the ultimate free textbook
+summaries of math subjects
 
 https://wo0fle.github.io/math/
