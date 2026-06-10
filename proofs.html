@@ -5,21 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
     <link rel="icon" type="image/x-icon" href="./icon.ico">
-    <title>logic, proofs, and naive set theory</title>
+    <title>introductory mathematical logic and proofs</title>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
 </head>
 <body>
     <main>
-        <h1>logic, proofs, and naive set theory</h1>
+        <h1>introductory mathematical logic and proofs</h1>
         
         <a href="./index.html">go home</a></li>
 
         <div class="dashedbox">
             prerequisites:
             <ul>
-                <li><a >arithmetic</a></li>
-                <li><a >elementary algebra</a></li>
-                <li><a >euclidean and analytic geometry</a></li>
+                <li><a href="./arithmetic.html">arithmetic</a></li>
+                <li><a href="./algebra.html">elementary algebra</a></li>
+                <li><a href="./geometry.html">euclidean and analytic geometry</a></li>
             </ul>
         </div>
 
@@ -34,14 +34,14 @@
                 <li><a href="#relations-and-functions">relations and functions</a></li>
                 <li><a href="#more-sets">more about sets</a></li>
                 <li><a href="#infinity">infinity</a></li>
-                <li><a href="#chioce-and-order">choice and order</a></li>
+                <li><a href="#choice-and-order">choice and order</a></li>
             </ul>
         </div>
 
         a lot of the math you've learned up to this point is about learning computation techniques, but how were these techniques
         <i>created</i>? and more importantly, how do we <i>know</i> that they actually work?
             <br><br>
-        this page will teach you about a logical system that mathematicians use to justify (and invent) math! 
+        this page will introduce you to a logical system that mathematicians use to justify (and invent) math!
         
         <hr>
 
@@ -98,9 +98,9 @@
             $$
         we can combine propositions using <b>connectives</b> to form more complex propositions:
         <ul>
-            <li><b>and</b> (<b>conjunction</b>): \(P\wedge Q\)</li>
-            <li><b>or</b> (<b>disjunction</b>): \(P\vee Q\)</li>
-            <li><b>not</b> (<b>negation</b>): \(\neg P\)</li>
+            <li>"<b>and</b>"/<b>conjunction</b> (denoted by the <b>wedge</b> symbol \(\wedge\)):$$P\wedge Q$$</li>
+            <li>"<b>or</b>"/<b>disjunction</b> (denoted by the <b>vee</b> symbol \(\vee\)):$$P\vee Q$$</li>
+            <li>"<b>not</b>"/<b>negation</b> (denoted by the symbol \(\neg\)):$$\neg P$$</li>
         </ul>
             $$
                 P\wedge Q=\text{Philadelphia is located in the USA and Mexico City is located in China}\\
@@ -121,7 +121,7 @@
                 \qquad
                 \begin{array} {|c|c|}\hline P & Q & P\vee Q \\ \hline T & T & T \\ \hline T & F & T \\ \hline F & T & T \\ \hline F & F & F \\ \hline  \end{array}
             $$
-        we can check if two propositions are <b>logically equivalent</b> (denoted \(\equiv\)) by using a truth table to check if their outputs are the same for all possible inputs.
+        we can check if two propositions are <b>logically equivalent</b> (denoted by the <b>triple bar</b> symbol \(\equiv\)) by using a truth table to check if their outputs are the same for all possible inputs.
             <br><br>
         for example:
             $$
@@ -148,7 +148,7 @@
             </li>
         </ul>
             <br>
-        to present the conclusion at the end of an argument, we can use the word "<b>therefore</b>" (denoted by \(\therefore\)).
+        to present the conclusion at the end of an argument, we can use the word "<b>therefore</b>" (denoted by the <b>ergo</b> symbol (meaning "therefore" in Latin!) symbol \(\therefore\)).
             <br><br>
         here's a symbolic example of an argument:
             $$
@@ -223,9 +223,9 @@
             </li>
         </ol>
             <br>
-        a proposition which is always true is called a <b>tautology</b> (denoted \(\top\)):
+        a proposition which is always true is called a <b>tautology</b> (denoted by the <b>top</b> symbol \(\top\)):
             $$P\vee\neg P\equiv\top$$
-        and a proposition which is always false is called a <b>contradiction</b> (denoted \(\bot\)):
+        and a proposition which is always false is called a <b>contradiction</b> (denoted by the <b>bot</b> symbol \(\bot\)):
             $$P\wedge\neg P\equiv\bot$$
         tautologies and contradictions have their own laws as well, regarding how they interact with other propositions:
         <ul>
@@ -237,7 +237,52 @@
             <li>\(\neg\bot\equiv\top\)</li>
         </ul>
             <br>
-        <span style="color: var(--woofleBlue);">is my definition of argument correct? idk ill have to check</span>
+        a <b>set</b> is an unordered collection of distinct objects, where each object is called an <b>element</b> (or <b>member</b>) of the set.
+            <br><br>
+        sets are denoted by putting braces around a list of its elements, like this set \(S\) of the objects \(1\), \(2\), and \(3\):
+            $$S=\{1,2,3\}$$
+        since sets are unordered, \(\{1,2,3\}=\{3,1,2\}\), and since each element of a set must be distinct, no set can contain 2 of the same element.
+            <br><br>
+        to say that an object is <b>in</b> a set, we use the symbol \(\in\).
+            $$1\in\{1,2,3\}$$
+        to say that an object is <b>not in</b> a set, just put a slash through the in symbol: \(\notin\).
+            $$a\notin\{1,2,3\}$$
+        if we don't want to list all the elements of the set to denote it, we can instead denote it with the following notation:
+            $$S=\{x:M(x)\}$$
+        altogether, \(\{x:M(x)\}\) is said as "the set of all \(x\) such that \(M(x)\) is true." 
+        <ul>
+            <li>the <b>colon</b> symbol \(:\) means "such that"</li>
+            <li>
+                \(M(x)\) (said as "\(M\) of \(x\)") is called the <b>membership statement</b>, which is a proposition about some arbitrary object \(x\),
+                such as: \(M(x)=x\text{ is a real number greater than }0\).
+            </li>
+        </ul>
+            <br>
+        here are some very important notation for commonly used sets of numbers in mathematics:
+        <ul>
+            <li>\(\mathbb{R}=\text{the set of all real numbers}\)</li>
+            <li>\(\mathbb{Q}=\text{the set of all rational numbers}\)</li>
+            <li>\(\mathbb{Z}=\text{the set of all integers}\)</li>
+            <li>\(\mathbb{N}=\text{the set of all natural numbers (i.e. integers greater than }0\text{)}\)</li>
+        </ul>
+            <br>
+        we'll actually define these sets of numbers <i>formally</i> later!
+            <br><br>
+        \(\emptyset\) denotes a set known as the <b>empty set</b> or <b>null set</b>, which is the set containing <i>no</i> elements:
+            $$\emptyset=\{\}$$
+        keep in mind that sets can contain any object, <i>including sets</i>, so:
+            $$
+                \emptyset\neq\{\emptyset\}\\
+                \{\}\neq\{\{\}\}\\
+                \text{the set containing no objects}\neq\text{the set containing }\emptyset
+            $$
+        similar to numbers, we can do operations on sets (say \(A\) and \(B\)):
+        <ul>
+            <li><b>intersection</b> (denoted by the <b>cap</b> symbol \(\cap\)):$$A\cap B=\{x:x\in A\wedge x\in B\}$$</li>
+            <li><b>union</b> (denoted by the <b>cup</b> symbol \(\cup\)):$$A\cup B=\{x:x\in A\vee x\in B\}$$</li>
+            <li><b>difference</b>  (denoted by the <b>backslash</b> symbol \(\backslash\)):$$A\backslash B=\{x:x\in A\wedge x\notin B\}$$</li>
+        </ul>
+        ...
         <hr>
 
         <h2 id="quantifiers">quantifiers</h2>
@@ -268,7 +313,9 @@
 
         <hr>
 
-        <h2 id="chioce-and-order">choice and order</h2>
+        <h2 id="choice-and-order">choice and order</h2>
+
+
 
     </main>
     <footer><div id="cool-guy"><a target="_blank" href="https://wo0fle.github.io/links/">random content will be made</a></div></footer>
