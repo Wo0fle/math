@@ -63,6 +63,17 @@ hr {
 
 ul, ol {margin-bottom: 0;}
 
+.diagram-container {
+    display: flex;
+    justify-content: center;
+}
+
+.diagram {
+    display: inline-block;
+    width: 20vw;
+    max-width: 40vw;
+}
+
 /***************************************************/
 
 footer {

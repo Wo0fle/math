@@ -73,7 +73,7 @@
                         proclaims that everyone believes that the creator of this website is extremely attractive.
                     </li>
                     <li>
-                        since attractiveness cannot be objectively verified using known mathematical facts,
+                        since attractiveness cannot be objectively verified using known mathematical or logical facts,
                         we can't meaningfully assign a truth value to it (even though i'm <i>sure</i> that <i>everyone</i>, including <i>you</i>, believes this).
                     </li>
                 </ul>
@@ -229,7 +229,7 @@
             $$P\vee\neg P\equiv\top$$
         and a proposition which is always false is called a <b>contradiction</b> (denoted by the <b>bot</b> symbol \(\bot\)):
             $$P\wedge\neg P\equiv\bot$$
-        tautologies and contradictions have their own laws as well, regarding how they interact with other propositions:
+        here are some laws regarding how tautologies and contradictions interact with other propositions \(P\):
         <ul>
             <li>\(P\vee\top\equiv\top\)</li>
             <li>\(P\wedge\top\equiv P\)</li><br>
@@ -239,7 +239,23 @@
             <li>\(\neg\bot\equiv\top\)</li>
         </ul>
             <br>
-        a <b>set</b> is an unordered collection of distinct objects, where each object is called an <b>element</b> (or <b>member</b>) of the set.
+        in math, an <b>object</b> can be defined as <i>any</i> concept that could be thought of, so long as it is:
+        <ul>
+            <li>
+                <b>logically consistent</b>: does not break the laws of traditional logic (either directly, or by causing some other object to do so), which are: <br><br>
+                <ol>
+                    <li><b>law of identity</b>: an object is always identical to itself.</li><br>
+                    <li><b>law of non-contradiction</b>: contradictions cannot exist (so if you end up with one, an initial premise is you assumed to be true is actually false).</li><br>
+                    <li><b>law of excluded middle</b>: propositions are truth-apt (true or false; not both, or niether, or some secret third thing).</li>
+                </ol>
+            </li><br>
+            <li><b>unambiguous</b>: able to be objectively and clearly defined (we always know exactly what it is)</li>
+        </ul> 
+            <br>
+        objects don't even have to be mathematical! but since this is a math site, we'll stick with math stuff (most of the time).
+            <br><br>
+        a foundational type of object which we will be exploring and utilizing a lot is called a <b>set</b>, defined as an unordered collection of distinct objects,
+        where each object in the set is called an <b>element</b> (or <b>member</b>) of it.
             <br><br>
         sets are denoted by putting braces around a list of its elements, like this set \(S\) of the objects \(1\), \(2\), and \(3\):
             $$S=\{1,2,3\}$$
@@ -272,7 +288,7 @@
             <br><br>
         \(\emptyset\) denotes a set known as the <b>empty set</b> or <b>null set</b>, which is the set containing <i>no</i> elements:
             $$\emptyset=\{\}$$
-        keep in mind that sets can contain any object, <i>including sets</i>, so:
+        keep in mind that sets can contain any object, <i>including other sets</i>, so:
             $$
                 \emptyset\neq\{\emptyset\}\\
                 \{\}\neq\{\{\}\}\\
@@ -291,7 +307,110 @@
                 A\cup B=\{a,b,c,d,e,f\}\qquad
                 A\backslash B=\{a,b\}
             $$
-        ...
+        we can also form other operations by combining these!
+            <br><br>
+        for example, the <b>symmetric difference</b> (denoted by the Greek capital letter <b>delta</b> \(\Delta\)):
+            $$A\Delta B=(A\cup B)\backslash(A\cap B)$$
+        it can be helpful to visualize these operations using <b>Venn diagrams</b>, where each set is represented by a circle:
+            <br><br>
+        <div class="diagram-container">
+            <div class="diagram">
+                <svg viewBox="0 0 200 75">
+                    <defs>
+                        <clipPath id="circleLeft">
+                            <circle cx="40%" cy="50%" r="20%"/>
+                        </clipPath>
+                        
+                        <clipPath id="intersection" clip-path="url(#circleLeft)">
+                            <circle cx="60%" cy="50%" r="20%"/>
+                        </clipPath>
+                    </defs>
+
+                    <rect width="100%" height="100%" fill="#5c8aff" clip-path="url(#intersection)"/>
+
+                    <circle 
+                        cx="40%" cy="50%" r="20%"
+                        fill="none" stroke="black"
+                    />
+                    <circle 
+                        cx="60%" cy="50%" r="20%"
+                        fill="none" stroke="black"
+                    />
+                </svg>
+                $$A\cap B$$
+            </div>
+            <div class="diagram">
+                <svg viewBox="0 0 200 75">
+                    <defs>
+                        <clipPath id="union">
+                            <circle cx="40%" cy="50%" r="20%"/>
+                            <circle cx="60%" cy="50%" r="20%"/>
+                        </clipPath>
+                    </defs>
+
+                    <rect width="100%" height="100%" fill="#5c8aff" clip-path="url(#union)"/>
+
+                    <circle 
+                        cx="40%" cy="50%" r="20%"
+                        fill="none" stroke="black"
+                    />
+                    <circle 
+                        cx="60%" cy="50%" r="20%"
+                        fill="none" stroke="black"
+                    />
+                </svg>
+                $$A\cup B$$
+            </div>
+            <div class="diagram">
+                <svg viewBox="0 0 200 75">
+                    <defs>
+                        <mask id="difference">
+                            <rect width="100%" height="100%" fill="white"/>
+                            <circle cx="60%" cy="50%" r="20%" fill="black"/>
+                        </mask>
+
+                        <clipPath id="A">
+                            <circle cx="40%" cy="50%" r="20%"/>
+                        </clipPath>
+                    </defs>
+
+                    <rect width="100%" height="100%" fill="#5c8aff" clip-path="url(#A)" mask="url(#difference)"/>
+                    
+                    <circle 
+                        cx="40%" cy="50%" r="20%"
+                        fill="none" stroke="black"
+                    />
+                    <circle 
+                        cx="60%" cy="50%" r="20%"
+                        fill="none" stroke="black"
+                    />
+                </svg>
+                $$A\backslash B$$
+            </div>
+            <div class="diagram">
+                <svg viewBox="0 0 200 75">
+                    <defs>
+                        <mask id="remove-intersection">
+                            <rect width="100%" height="100%" fill="white"/>
+                            <rect width="100%" height="100%" fill="black" clip-path="url(#intersection)"/>
+                        </mask>
+                    </defs>
+
+                    <rect width="100%" height="100%" fill="#5c8aff" clip-path="url(#union)" mask="url(#remove-intersection)"/>
+                    
+                    <circle 
+                        cx="40%" cy="50%" r="20%"
+                        fill="none" stroke="black"
+                    />
+                    <circle 
+                        cx="60%" cy="50%" r="20%"
+                        fill="none" stroke="black"
+                    />
+                </svg>
+                $$A\Delta B$$
+            </div>
+        </div>
+        omg i might actually figure out svg
         <hr>
 
         <h2 id="quantifiers">quantifiers</h2>
