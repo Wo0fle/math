@@ -68,6 +68,11 @@ ul, ol {margin-bottom: 0;}
     justify-content: center;
 }
 
+.diagram-container mjx-container[display] {
+    margin: auto 0;
+    padding: 0;
+}
+
 .diagram {
     display: inline-block;
     width: 20vw;
