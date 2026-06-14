@@ -28,7 +28,7 @@
             <ul>
                 <li><a href="#intro-to-formal-logic">🟩intro to formal logic</a></li>
                 <li><a href="#sets">🟩sets</a></li>
-                <li><a href="#more-formal-logic">🟥more formal logic</a></li>
+                <li><a href="#quantifiers">🟥quantifiers</a></li>
                 <li><a href="#counting">🟥counting</a></li>
                 <li><a href="#proofs">🟥proofs</a></li>
                 <li><a href="#induction">🟥mathematical induction</a></li>
@@ -246,7 +246,7 @@
             $$P\vee\neg P\equiv\top$$
         and a proposition which is always false is called a <b>contradiction</b> (denoted by the <b>bot</b> symbol \(\bot\)):
             $$P\wedge\neg P\equiv\bot$$
-        here are some laws regarding how tautologies and contradictions interact with other propositions \(P\):
+        since tautologies and contradictions are just propositions with an unchanging truth value, connecting them to other propositions \(P\) reduces it to a single proposition:
         <ul>
             <li>\(P\vee\top\equiv\top\)</li>
             <li>\(P\wedge\top\equiv P\)</li><br>
@@ -259,6 +259,130 @@
         by the law of non-contradiction, contradictions should not be allowed to exist in any argument, so if we <i>do</i> stumble upon one,
         that usually means that one of our initial premises (which we <i>assumed</i> to be true) is actually false.
             <br><br>
+        there's a couple more connectives we should discuss.
+            <br><br>
+        the <b>conditional</b> connective (denoted with a <b>single-bar arrow</b> \(\rightarrow\)) connects propositions via an "if ..., then ..." statement:
+            $$P\rightarrow Q$$
+        there are a few different ways to say \(P\rightarrow Q\) in words:
+        <ul>
+            <li>"<b>if</b> \(P\), <b>then</b> \(Q\)"</li>
+            <li>"\(P\) <b>implies</b> \(Q\)"</li>
+            <li>"\(P\) is <b>sufficient</b> for \(Q\)"</li>
+            <li>"\(Q\) is <b>necessary</b> for \(P\)"</li>
+        </ul>
+            <br>
+        the arrow can also face the other way: \(Q\leftarrow P\equiv P\rightarrow Q\).
+            <br><br>
+        here is its truth table:
+            $$
+                \begin{array}
+                    {|c|c|}\hline P & Q & P\rightarrow Q \\
+                    \hline T & T & T\\
+                    \hline T & F & F \\
+                    \hline F & T & T \\
+                    \hline F & F & T \\
+                    \hline  
+                \end{array}
+            $$
+        the first two rows of this truth table should align with the intuitive idea of an "if ..., then ..." statement:
+        <ul>
+            <li>"\(2>1\) (true) \(\rightarrow 2>0\) (true)" is a true statement</li>
+            <li>"\(2>1\) (true) \(\rightarrow 2>3\) (false)" is a false statement</li>
+        </ul>
+            <br>
+        but what's going on with the last two rows?
+        <ul>
+            <li>"\(2>3\) (false) \(\rightarrow 2>0\) (true)" is a true statement</li>
+            <li>"\(2>3\) (false) \(\rightarrow 2>4\) (false)" is a true statement</li>
+        </ul>
+            <br>
+        it may seem strange, but <i>yes</i>, both these statements are true; in fact, they are called <b>vacuously true</b>!
+            <br><br>
+        you can think about it this way: false premises can imply anything since nothing can go against them.
+            <br><br>
+        as an informal example, consider this proposition:
+            $$\text{if Beethoven was alive today, then he would enjoy heavy metal music.}$$
+        since Beethoven is <i>not</i> alive today, you cannot definitively say that he <i>wouldn't</i> enjoy metal music, so this statement is a vacuous truth.
+            <br><br>
+        here is something to interesting to note, called the <b>conditional law</b>:
+            $$
+                \begin{array}
+                    {|c|c|}\hline P & Q & \neg P\vee Q \\
+                    \hline T & T & T\\
+                    \hline T & F & F \\
+                    \hline F & T & T \\
+                    \hline F & F & T \\
+                    \hline  
+                \end{array}\quad\text{matches}\quad
+                \begin{array}
+                    {|c|c|}\hline P & Q & P\rightarrow Q \\
+                    \hline T & T & T\\
+                    \hline T & F & F \\
+                    \hline F & T & T \\
+                    \hline F & F & T \\
+                    \hline  
+                \end{array}\\\\
+                \therefore P\rightarrow Q\equiv\neg P\vee Q\
+            $$
+        using this law, we can show another extremely important result called the <b>contrapositive law</b>:
+            $$
+                \begin{array}{l}
+                    P\rightarrow Q \\
+                    \equiv\neg P\vee Q\qquad\text{by conditional law}\\
+                    \equiv\neg P\vee \neg(\neg Q)\qquad\text{by double negation law}\\
+                    \equiv\neg(\neg Q)\vee \neg P\qquad\text{by commutative law}\\
+                    \equiv \neg Q\rightarrow\neg P\qquad\text{by conditional law}\\
+                \end{array}\\\\
+                \therefore P\rightarrow Q\equiv\neg Q\rightarrow\neg P
+            $$
+        \(Q\equiv\neg Q\rightarrow\neg P\) is called the <b>contrapositive</b> of \(P\rightarrow Q\).
+            <br><br>
+        keep in mind that \(P\rightarrow Q\not\equiv Q\rightarrow P\):
+        <ul><li>\(Q\rightarrow P\) is called the <b>converse</b> of \(P\rightarrow Q\).</li></ul>
+            <br>
+        also, \(P\rightarrow Q\not\equiv \neg P\rightarrow \neg Q\):
+        <ul><li>\(\neg P\rightarrow \neg Q\) is called the <b>inverse</b> of \(P\rightarrow Q\).</li></ul>
+            <br>
+        if you combine a conditional statement with its converse, you get a <b>biconditional</b> statement:
+            $$P\leftrightarrow Q\equiv(P\rightarrow Q)\wedge(Q\rightarrow P)$$
+        in words:
+        <ul>
+            <li>"\(P\) implies \(Q\) and \(Q\) implies \(P\)"</li>
+            <li>"\(P\) is <b>necessary and sufficient</b> for \(Q\)"</li>
+            <li>
+                "\(P\) <b>if and only if</b> \(Q\)"
+                <ul><li>"if and only if" is often abbreviated to "<b>iff</b>"</li></ul>
+            </li>
+        </ul>
+            <br>
+        here is its truth table:
+            $$
+                \begin{array}
+                    {|c|c|}\hline P & Q & P\leftrightarrow Q \\
+                    \hline T & T & T\\
+                    \hline T & F & F \\
+                    \hline F & T & F \\
+                    \hline F & F & T \\
+                    \hline  
+                \end{array}
+            $$
+        notice how \(P\leftrightarrow Q\) is only true when \(P\) and \(Q\) have the same truth value!
+            <br><br>
+        lastly,
+            $$
+                \begin{array}{l}
+                    P\leftrightarrow Q \\
+                    \equiv(P\rightarrow Q)\wedge(Q\rightarrow P)\qquad\text{by definition of a biconditional statement}\\
+                    \equiv(\neg P\vee Q)\wedge(\neg Q\vee P)\qquad\text{by conditional law}\\
+                    \equiv((\neg P\vee Q)\wedge\neg Q)\vee((\neg P\vee Q)\wedge P)\qquad\text{by distributive law}\\
+                    \equiv(\neg Q\wedge(\neg P\vee Q))\vee(P\wedge(\neg P\vee Q))\qquad\text{by commutative law}\\
+                    \equiv((\neg Q\wedge\neg P)\vee(\neg Q\wedge Q))\vee((P\wedge\neg P)\vee(P\wedge Q))\qquad\text{by distributive law}\\
+                    \equiv((\neg Q\wedge\neg P)\vee\bot)\vee(\bot\vee(P\wedge Q))\qquad\text{by definition of contradiction}\\
+                    \equiv(\neg Q\wedge\neg P)\vee(P\wedge Q)\\
+                    \equiv(P\wedge Q)\vee(\neg Q\wedge\neg P)\qquad\text{by commutative law}\\
+                \end{array}\\\\
+                \therefore P\leftrightarrow Q\equiv(P\wedge Q)\vee(\neg P\wedge\neg Q)
+            $$
         if you think this whole section has felt like a bunch of abstract philosophy, that's because <i>it is</i>!
             <br><br>
         a lot of important math is directly based on this logical system we have described, so it is important that we clearly define it; we'll see later how this system is used to prove conclusions in math.
@@ -472,34 +596,44 @@
         </div>
         <hr>
 
-        <h2 id="more-formal-logic">more formal logic</h2>
+        <h2 id="quantifiers">quantifiers</h2>
 
-        back to the "abstract philosophy" lol
+        sets + logic now come together
 
         <hr>
 
         <h2 id="counting">counting</h2>
 
+        i'll need to figure out what this refers to, i saw it in a syllabus somewhere but i dont remember the specific subject matter
+
         <hr>
 
         <h2 id="proofs">proofs</h2>
+
+        be extremely clear about proof methods and techniques
 
         <hr>
 
         <h2 id="induction">mathematical induction</h2>
 
+        be clear on strong vs weak induction (never was explained to me super well)
+
         <hr>
 
         <h2 id="relations-and-functions">relations and functions</h2>
+
+        oh i know about relations alright
 
         <hr>
 
         <h2 id="more-sets">more about sets</h2>
 
+        the stuff that hasnt been covered from the sets and logic part of munkres topology
+
         <hr>
 
         <h2 id="infinity">infinity</h2>
-
+        
         <hr>
 
         <h2 id="choice-and-order">choice and order</h2>
