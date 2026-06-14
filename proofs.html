@@ -49,24 +49,30 @@
         <h2 id="intro-to-formal-logic">intro to formal logic</h2>
 
         first, we need to define the rules of the logical system we will be working under;
-        we will refer to these foundational rules as the <b>laws of traditional logic</b>, and they are:
+        we will refer to these unbreakable rules as the <b>laws of traditional logic</b>, and they are:
         <ol>
             <li><b>law of identity</b>: objects are always identical to themselves.</li>
             <li><b>law of non-contradiction</b>: contradictions cannot exist.</li>
             <li><b>law of excluded middle</b>: propositions are truth-apt.</li>
         </ol>
             <br>
-        these laws may be a bit unclear at the moment, but keep them in mind, as we'll reference them after we define some of the terminology used in their definitions.
+        these laws may be a bit unclear at the moment, so let's clear these up a bit.
             <br><br>
-        an <b>object</b> can be defined as <i>any</i> concept that could be thought of, so long as it is:
+        to clarify the law of identity: in math, an <b>object</b> can be defined as <i>any</i> concept that could be thought of, so long as it is:
         <ul>
             <li><b>logically consistent</b>: does not break the laws of traditional logic (either directly, or by causing some other object to do so).</li>
             <li><b>unambiguous</b>: able to be objectively and clearly defined (we always know exactly what it is)</li>
         </ul> 
             <br>
+        so, the law of identity means that any object (for example, the number \(12\)) is equal to itself (i.e., \(12=12\)).
+            <br><br>
+        this may seem obvious, but it's a foundational rule to clarify what is allowed to be called an "object"; we'll see a few examples of <b>non-objects</b> later.
+            <br><br>
+        we will define what a contradiction actually <i>is</i> later to clarify the law of non-contradiction, but now let's talk about the law of excluded middle.
+            <br><br>
         a <b>proposition</b> is a truth-apt declarative sentence.
         <ul>
-            <li><b>truth-apt</b>: capable of being <b>true</b> (\(T\)) or <b>false</b> (\(F\)), but <i>not both</i> (by the law of excluded middle).</li>
+            <li><b>truth-apt</b>: capable of being <b>true</b> (\(T\)) or <b>false</b> (\(F\)), but <i>not both, niether, or some secret third thing</i> (by the law of excluded middle).</li>
             <li><b>declarative</b>: defines a relationship or asserts a specific state.</li>
         </ul>
             <br>
@@ -84,25 +90,13 @@
                 </ul>
             </li><br>
             <li>
-                "\(\text{the creator of this site is extremely attractive to everyone}\)" <i>is not</i> a proposition:
+                "\(>\)" <i>is not</i> a proposition:
                 <ul>
                     <li>
-                        proclaims that everyone believes that the creator of this website is extremely attractive.
+                        this doesn't proclaim anything.
                     </li>
                     <li>
-                        since attractiveness cannot be objectively verified using known mathematical or logical facts,
-                        we can't meaningfully assign a truth value to it (even though i'm <i>sure</i> that <i>everyone</i>, including <i>you</i>, believes this).
-                    </li>
-                </ul>
-            </li><br>
-            <li>
-                "\(\text{hello}\)" <i>is not</i> a proposition:
-                <ul>
-                    <li>
-                        hi! anyway, this sentence doesn't proclaim anything.
-                    </li>
-                    <li>
-                        since this sentence isn't declarative, it also doesn't make sense to assign a truth value to it.
+                        since it isn't declarative, it also doesn't make sense to assign a truth value to it.
                     </li>
                 </ul>
             </li>
@@ -161,34 +155,46 @@
             <li>
                 <b>conclusion</b>: (supposedly) the result of an argument.
                 <ul><li>
-                    i say "supposedly" because if you make a mistake during an arugment, the "conclusion" you 
+                    i say "supposedly" because if you make a mistake during an arugment, the conclusion you 
                     draw would be <b>invalid</b>. if the argument is solid, the conclusion is <b>valid</b>.
                 </li></ul>
             </li>
         </ul>
             <br>
-        to present the conclusion at the end of an argument, we can use the word "<b>therefore</b>" (denoted by the <b>ergo</b> symbol \(\therefore\) (meaning "therefore" in Latin!)).
+        to present the conclusion at the end of an argument, we can use the word "<b>therefore</b>" (denoted by the this symbol \(\therefore\), called the <b>ergo</b> symbol (meaning "therefore" in Latin!)).
             <br><br>
-        here's a symbolic example of an argument:
+        consider this symbolic example:
             $$
-                \begin{array}{c}
+                \begin{array}{l}
                     P\vee Q \\
                     \neg Q \\
                     \hline
                     \therefore P
                 \end{array}
             $$
-        here, \(P\) and \(Q\) are propositions, \(P\vee Q\) and \(\neg Q\) are premises, and the conclusion is \(P\).
+        here, \(P\) and \(Q\) are both propositions, and \(P\vee Q\) and \(\neg Q\) are premises.
             <br><br> 
-        in words:
+        we first assume that our premises are true:
             $$
-                \begin{array}{c}
-                    P\text{ or }Q\text{ is true}\equiv P\text{ is true or }Q\text{ is true}\\
-                    \text{not }Q\text{ is true}\equiv Q\text{ is false}\\
-                    \hline
-                    \text{therefore, }P\text{ must be true}
+                \begin{array}{l}
+                    P\vee Q\text{ is true}\equiv(P\text{ is true})\vee(Q\text{ is true})\qquad\text{by the definition of disjunction}\\
+                    \neg Q\text{ is true}\equiv Q\text{ is false}\qquad\text{by the definition of negation}
                 \end{array}
             $$
+        the argument:
+        <ul>
+            <li>as shown above, we use the definitions of disjunction and negation to "transform" our premises into something we can work with.</li>
+            <li>since we know that \(Q\) is false by our second premise, then by our first premise, \(P\) <i>must</i> be true.</li>
+        </ul>
+            <br>
+        so that's our conclusion, and we write "\(\therefore P\)."
+            <br><br>
+        in case it isn't already clear, we don't have to write "is true" or "is false" after every proposition:
+        <ul>
+            <li>\(P\equiv\) "\(P\) is true"</li>
+            <li>\(\neg P\equiv\) "\(\neg P\) is true" \(\equiv\) "\(P\) is false"</li>
+        </ul>
+            <br>
         the same way that numbers and operations have laws that tell you how you are allowed to manipulate expressions,
         so do propositions and connectives!
         <ol>
@@ -256,7 +262,7 @@
             <li>\(\neg\bot\equiv\top\)</li>
         </ul>
             <br>
-        by the law of non-contradiction, contradictions should not be allowed to exist in any argument, so if we <i>do</i> stumble upon one,
+        now, to finally clarify the law of non-contradiction: contradictions should not be allowed to exist in any argument, so if we <i>do</i> stumble upon one,
         that usually means that one of our initial premises (which we <i>assumed</i> to be true) is actually false.
             <br><br>
         there's a couple more connectives we should discuss.
