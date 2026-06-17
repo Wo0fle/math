@@ -26,21 +26,20 @@
             table of contents:
             <ul>
                 <li><a href="#intro-to-C">🟨intro to \(\mathbb{C}\)</a></li>
-                <li><a href="#functions-of-z-and-derivatives">🟥functions of \(z\) and derivatives</a></li>
+                <li><a href="#functions-of-z">🟥functions of \(z\)</a></li>
+                <li><a href="#derivatives">🟥derivatives</a></li>
                 <li><a href="#elementary-functions">🟥elementary functions</a></li>
                 <li><a href="#integrals">🟥integrals</a></li>
                 <li><a href="#series">🟥series</a></li>
-                <li><a href="#residues-and-poles">🟥residues and poles</a></li>
-                <li><a href="#mappings-and-transformations">🟥mappings and transformations</a></li>
+                <li><a href="#singularities-and-residues">🟥singularities and residues</a></li>
             </ul>
         </div>
 
-        you may have heard of "complex numbers" \(a+bi\), where \(i:=\sqrt{-1}\),
-        since they are briefly mentioned in elementary algebra
-        (for example, they are used as a way to find the roots of the polynomial \(x^2+1=0\)).
+        you remember the notion of "complex numbers" \(a+bi\), where \(i:=\sqrt{-1}\),
+        since they were briefly mentioned in <a href="./algebra.html">elementary algebra</a>
+        (for example, as a way to find the roots of the polynomial \(x^2+1=0\)).
             <br><br>
-        this page will formally reintroduce them, teach you how to think about them geometrically,
-        and teach you how to do calculus with them!
+        this page will formally reintroduce complex numbers and teach you how to think about them geometrically and do calculus with them!
 
         <hr>
 
@@ -57,9 +56,8 @@
         thus, numbers of the form \((x,0)\) are on the <b>real axis</b> (and are <b>real numbers</b>), and those of the form \((0,y)\) (with \(y\neq0\))
         are on the <b>imaginary axis</b> (and are called <b>imaginary numbers</b>).
             <br><br>
-        together, the real and imaginary axes make up the <b>complex plane</b>.
-            <br><br>
-        the set of all complex numbers (i.e. what the complex plane represents) is denoted \(\mathbb{C}\).
+        together, the real and imaginary axes make up the <b>complex plane</b>; 
+        it represents the set of all complex numbers, denoted \(\mathbb{C}\).
             <br><br>
         two complex numbers are <b>equal</b> when their real parts are equal and their imaginary parts are equal
         (i.e., they are the same point on the complex plane).
@@ -74,7 +72,7 @@
             $$z_1+z_2=(x_1,y_1)+(x_2,y_2)=(x_1+x_2,y_1+y_2)$$
         the <b>product</b> of two complex numbers is defined as follows:
             $$z_1 z_2=(x_1,y_1)(x_2,y_2)=(x_1 x_2-y_1 y_2,y_1 x_2+x_1 y_2)$$
-        you can easily remember complex multiplication as "\(\text{(lefts - rights , in + out)}\)."
+        i like to remember complex multiplication as "\(\text{(lefts - rights , in + out)}\)"!
             <br><br>
         these definitions of sum and product extended into \(\mathbb{C}\) become the "usual" (real-valued) sum and product when restricted back to \(\mathbb{R}\).
             <br><br>
@@ -426,11 +424,20 @@
         any point in \(\text{Acc}(S)\) is called an <b>accumulation point</b> or a <b>limit point</b>.
         <hr>
 
-        <h2 id="functions-of-z-and-derivatives">functions of \(z\) and derivatives</h2>
+        <h2 id="functions-of-z">functions of \(z\)</h2>
         
         <span style="color: var(--woofleBlue);">
-            funcs, lims, cont, derivs, CR eqs (cartesian, polar, complex), "analytic" and its consequences
+            funcs of z, lims, cont
         </span>
+
+        <hr> 
+
+        <h2 id="derivatives">derivatives</h2>
+        
+        <span style="color: var(--woofleBlue);">
+            derivs, CR eqs (cartesian, polar, complex), "analytic" and its consequences
+        </span>
+
         <hr>
 
         <h2 id="elementary-functions">elementary functions</h2>
@@ -457,11 +464,11 @@
 
         <hr>
 
-        <h2 id="residues-and-poles">residues and poles</h2>
+        <h2 id="singularities-and-residues">singularities and residues</h2>
 
-        <hr>
-
-        <h2 id="mappings-and-transformations">mappings and transformations</h2>
+        <span style="color: var(--woofleBlue);">
+            cauchy residue thm and all that stuff that goes with it
+        </span>
 
     </main>
     <footer><div id="cool-guy"><a target="_blank" href="https://wo0fle.github.io/links/">random content will be made</a></div></footer>
