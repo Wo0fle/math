@@ -2,4 +2,4 @@
 
 summaries of math subjects
 
-https://wo0fle.github.io/math/
+<https://wo0fle.github.io/math/>

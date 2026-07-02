@@ -304,7 +304,7 @@
             <br>
         it may seem strange, but <i>yes</i>, both these statements are true; in fact, they are called <b>vacuously true</b>!
             <br><br>
-        you can think about it this way: false premises can imply anything since nothing can go against them.
+        think about it this way: false premises can imply anything, since nothing can go against them.
             <br><br>
         as an informal example, consider this proposition:
             $$\text{if Beethoven was alive today, then he would enjoy heavy metal music.}$$
@@ -411,23 +411,36 @@
         important side note:
         we'll be defining and using multiple other symbols to represent relationships between mathematical objects, so just know that putting slash through a symbol \(S\) generally means \(\neg S\).
             <br><br>
-        if we don't want to list all the elements of the set to denote it, we can instead denote it with the following notation:
-            $$S=\{x:M(x)\}$$
-        altogether, \(\{x:M(x)\}\) is said as "the set of all \(x\) such that \(M(x)\) is true." 
+        if we don't want to list all the elements of the set to denote it, we can instead denote it with <b>set builder notation</b>:
+            $$S=\{\textcolor{red}{x}:\textcolor{#0049ff}{M(x)}\}$$
         <ul>
-            <li>the <b>colon</b> symbol \(:\) means "such that"</li>
             <li>
-                \(M(x)\) (said as "\(M\) of \(x\)") is called the <b>membership statement</b>, which is a proposition about some arbitrary object \(x\),
+                <span style="color:red;">the red part</span> denotes the <b>members</b> of the set
+            </li>
+            <li>the <b>colon</b> symbol \(:\) (generally) means "such that"</li>
+            <li>
+                <span style="color:var(--woofleBlue);">the blue part</span>, (said as "\(M\) of \(x\)"), is called the <b>membership statement</b>, which is a proposition about some arbitrary object \(x\),
                 such as: \(M(x)=x\text{ is a real number greater than }0\).
             </li>
         </ul>
             <br>
-        here are some very important notation for commonly used sets of numbers in mathematics:
+        altogether, \(\{\textcolor{red}{x}:\textcolor{#0049ff}{M(x)}\}\) is said as "the set of all \(\textcolor{red}{x}\) such that \(\textcolor{#0049ff}{M(x)}\)." 
+            <br><br>
+        for example, \(\{\textcolor{red}{x^2+y^2}:\textcolor{#0049ff}{0\leq x^2+y^2\leq 1}\}\) is 
+        "the set of all \(\textcolor{red}{x^2+y^2}\) such that \(\textcolor{#0049ff}{0\leq x^2+y^2\leq 1}\)", which, if you think of \(x\) and \(y\) as coordinates of the plane, 
+        is the unit disk!
+            <br><br>
+        here is some very important notation for commonly used sets of numbers in mathematics:
         <ul>
             <li>\(\mathbb{R}=\text{the set of all real numbers}\)</li>
             <li>\(\mathbb{Q}=\text{the set of all rational numbers}\)</li>
             <li>\(\mathbb{Z}=\text{the set of all integers}\)</li>
-            <li>\(\mathbb{N}=\text{the set of all natural numbers (i.e. integers greater than }0\text{)}\)</li>
+            <li>
+                \(\mathbb{N}=\text{the set of all natural numbers (i.e. integers greater than }0\text{)}\)
+                <ul><li>by the way, in other math textbooks/lectures/resources, you might sometimes find that \(\mathbb{N}\) is defined as all the non-negative integers, <i>which includes \(\textit{0}\)</i>.
+                    people can't seem to agree on a standard definition for \(\mathbb{N}\), but <i>on this site</i>, \(\mathbb{N}\) will <i>always only</i> denote the integers greater than \(0\).
+                </li></ul>
+            </li>
         </ul>
             <br>
         we'll actually define these sets of numbers <i>formally</i> later!
@@ -455,7 +468,7 @@
             $$
         we can also form other operations by combining these!
             <br><br>
-        for example, the <b>symmetric difference</b> (denoted by the Greek capital letter <b>Delta</b> \(\Delta\)):
+        for example, the <b>symmetric difference</b> (denoted by the capital Greek letter <b>Delta</b> \(\Delta\)):
             $$A\Delta B=(A\cup B)\backslash(A\cap B)$$
         it can be helpful to visualize these operations using <b>Venn diagrams</b>, where each set is represented by a circle.
             <br><br>
@@ -557,15 +570,19 @@
             </div>
         </div>
             <br>
-        \(A\) is called a <b>subset</b> (denoted by the symbol \(\subseteq\)) of \(B\) if all the elements of \(A\) are also elements of \(B\).
-            <br><br>
+        suppose that all the elements of \(A\) are also elements of \(B\); then,
+        <ul>
+            <li>\(A\) is called a <b>subset</b> (denoted by the symbol \(\subseteq\)) of \(B\)</li>
+            <li>\(B\) is called a <b>superset</b> (denoted by the symbol \(\supseteq\)) of \(A\)</li>
+        </ul>
+            <br>
         <div class="diagram-container">
             $$
                 \begin{array}{c}
                     A=\{a,b\} \\
                     B=\{a,b,c,d\} \\
                     \hline
-                    \therefore A\subseteq B
+                    \therefore A\subseteq B,B\supseteq A
                 \end{array}
             $$
             <div class="diagram">
@@ -579,9 +596,13 @@
                         fill="none" stroke="#0049ff"
                     />
                 </svg>
-                $$\textcolor{red}{A}\subseteq\textcolor{#0049ff}{B}$$
+                $$\textcolor{red}{A}\subseteq\textcolor{#0049ff}{B}\\ \textcolor{#0049ff}{B}\supseteq\textcolor{red}{A}$$
             </div>            
         </div>
+            <br>
+        note that if two sets are exactly the same, then they are both subsets/supersets of each other, since they still satisfy the definitions above; 
+        a subset/superset is called <b>strict</b> if <i>some BUT NOT ALL</i> of the elements of the subset are included in the superset, denoted \(\subset\) and \(\supset\).
+        <ul><li>generally, we will stick to using the <b>non-strict</b> subset and superset symbols, unless strictness is actually <i>required</i>.</li></ul>
             <br>
         \(A\) is <b>disjoint</b> from \(B\) if \(A\cap B=\emptyset\) (i.e. they do not share any elements).
             <br><br>
