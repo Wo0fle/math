@@ -130,17 +130,17 @@
         we can summarize all possible output truth values for different input truth values using <b>truth tables</b>:
             <!-- thank you sm: https://isaurssaurav.github.io/mathjax-table-generator/ -->
             $$
-                \begin{array}{|c|c|}\hline P & Q & P\wedge Q \\ \hline T & T & T \\ \hline T & F & F \\ \hline F & T & F \\ \hline F & F & F \\ \hline  \end{array}
+                \begin{array}{c|c}P & Q & P\wedge Q \\ \hline T & T & T \\ T & F & F \\ F & T & F \\ F & F & F \end{array}
                 \qquad
-                \begin{array} {|c|c|}\hline P & Q & P\vee Q \\ \hline T & T & T \\ \hline T & F & T \\ \hline F & T & T \\ \hline F & F & F \\ \hline  \end{array}
+                \begin{array} {c|c}P & Q & P\vee Q \\ \hline T & T & T \\ T & F & T \\ F & T & T \\ F & F & F \end{array}
             $$
         we can check if two propositions are <b>logically equivalent</b> (denoted by the <b>triple bar</b> symbol \(\equiv\)) by using a truth table to check if their outputs are the same for all possible inputs.
             <br><br>
         for example:
             $$
-                \begin{array} {|c|c|}\hline P & Q & \neg(P\wedge Q) \\ \hline T & T & F \\ \hline T & F & T \\ \hline F & T & T \\ \hline F & F & T \\ \hline  \end{array}
+                \begin{array} {c|c} P & Q & \neg(P\wedge Q) \\ \hline T & T & F \\ T & F & T \\ F & T & T \\ F & F & T \end{array}
                 \quad\text{matches}\quad
-                \begin{array} {|c|c|}\hline P & Q & \neg P\vee\neg Q \\ \hline T & T & F \\ \hline T & F & T \\ \hline F & T & T \\ \hline F & F & T \\ \hline  \end{array}
+                \begin{array} {c|c} P & Q & \neg P\vee\neg Q \\ \hline T & T & F \\ T & F & T \\ F & T & T \\ F & F & T \end{array}
             $$
         so we know that \(\neg(P\wedge Q)\equiv\neg P\vee\neg Q\)!
             <br><br>
@@ -155,7 +155,7 @@
             <li>
                 <b>conclusion</b>: (supposedly) the result of an argument.
                 <ul><li>
-                    i say "supposedly" because if you make a mistake during an arugment, the conclusion you 
+                    i say "supposedly" because if you make a mistake during an argument, the conclusion you 
                     draw would be <b>invalid</b>. if the argument is solid, the conclusion is <b>valid</b>.
                 </li></ul>
             </li>
@@ -282,12 +282,11 @@
         here is its truth table:
             $$
                 \begin{array}
-                    {|c|c|}\hline P & Q & P\rightarrow Q \\
+                    {c|c} P & Q & P\rightarrow Q \\
                     \hline T & T & T\\
-                    \hline T & F & F \\
-                    \hline F & T & T \\
-                    \hline F & F & T \\
-                    \hline  
+                     T & F & F \\
+                     F & T & T \\
+                     F & F & T  
                 \end{array}
             $$
         the first two rows of this truth table should align with the intuitive idea of an "if ..., then ..." statement:
@@ -313,20 +312,18 @@
         here is something to interesting to note, called the <b>conditional law</b>:
             $$
                 \begin{array}
-                    {|c|c|}\hline P & Q & \neg P\vee Q \\
+                    {c|c} P & Q & \neg P\vee Q \\
                     \hline T & T & T\\
-                    \hline T & F & F \\
-                    \hline F & T & T \\
-                    \hline F & F & T \\
-                    \hline  
+                     T & F & F \\
+                     F & T & T \\
+                     F & F & T  
                 \end{array}\quad\text{matches}\quad
                 \begin{array}
-                    {|c|c|}\hline P & Q & P\rightarrow Q \\
+                    {c|c} P & Q & P\rightarrow Q \\
                     \hline T & T & T\\
-                    \hline T & F & F \\
-                    \hline F & T & T \\
-                    \hline F & F & T \\
-                    \hline  
+                     T & F & F \\
+                     F & T & T \\
+                     F & F & T  
                 \end{array}\\\\
                 \therefore P\rightarrow Q\equiv\neg P\vee Q\
             $$
@@ -341,7 +338,7 @@
                 \end{array}\\\\
                 \therefore P\rightarrow Q\equiv\neg Q\rightarrow\neg P
             $$
-        \(Q\equiv\neg Q\rightarrow\neg P\) is called the <b>contrapositive</b> of \(P\rightarrow Q\).
+        \(\neg Q\rightarrow\neg P\) is called the <b>contrapositive</b> of \(P\rightarrow Q\).
             <br><br>
         keep in mind that \(P\rightarrow Q\not\equiv Q\rightarrow P\):
         <ul><li>\(Q\rightarrow P\) is called the <b>converse</b> of \(P\rightarrow Q\).</li></ul>
@@ -364,12 +361,11 @@
         here is its truth table:
             $$
                 \begin{array}
-                    {|c|c|}\hline P & Q & P\leftrightarrow Q \\
+                    {c|c} P & Q & P\leftrightarrow Q \\
                     \hline T & T & T\\
-                    \hline T & F & F \\
-                    \hline F & T & F \\
-                    \hline F & F & T \\
-                    \hline  
+                     T & F & F \\
+                     F & T & F \\
+                     F & F & T  
                 \end{array}
             $$
         notice how \(P\leftrightarrow Q\) is only true when \(P\) and \(Q\) have the same truth value!
@@ -419,8 +415,10 @@
             </li>
             <li>the <b>colon</b> symbol \(:\) (generally) means "such that"</li>
             <li>
-                <span style="color:var(--woofleBlue);">the blue part</span>, (said as "\(M\) of \(x\)"), is called the <b>membership statement</b>, which is a proposition about some arbitrary object \(x\),
-                such as: \(M(x)=x\text{ is a real number greater than }0\).
+                <span style="color:var(--woofleBlue);">the blue part</span>, 
+            (said as "<span style="color:var(--woofleBlue);">\(M\) of \(x\)</span>"), is called the <b>membership statement</b>,
+                which is a proposition about some arbitrary object \(x\),
+                such as: <span style="color:var(--woofleBlue);">\(M(x)=x\text{ is a real number greater than }0\)</span>.
             </li>
         </ul>
             <br>
@@ -470,7 +468,7 @@
             <br><br>
         for example, the <b>symmetric difference</b> (denoted by the capital Greek letter <b>Delta</b> \(\Delta\)):
             $$A\Delta B=(A\cup B)\backslash(A\cap B)$$
-        it can be helpful to visualize these operations using <b>Venn diagrams</b>, where each set is represented by a circle.
+        it can be helpful to visualize these operations using <b>Venn diagrams</b>, where each set is represented by a shape (often a circle).
             <br><br>
         <div class="diagram-container">
             <div class="diagram">
@@ -601,7 +599,7 @@
         </div>
             <br>
         note that if two sets are exactly the same, then they are both subsets/supersets of each other, since they still satisfy the definitions above; 
-        a subset/superset is called <b>strict</b> if <i>some BUT NOT ALL</i> of the elements of the subset are included in the superset, denoted \(\subset\) and \(\supset\).
+        a subset/superset is called <b>strict</b> if <i>some BUT NOT ALL</i> of the elements of the subset are included in the superset, denoted \(\subset\) and \(\supset\) respectively.
         <ul><li>generally, we will stick to using the <b>non-strict</b> subset and superset symbols, unless strictness is actually <i>required</i>.</li></ul>
             <br>
         \(A\) is <b>disjoint</b> from \(B\) if \(A\cap B=\emptyset\) (i.e. they do not share any elements).
