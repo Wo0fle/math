@@ -346,7 +346,7 @@
         also, \(P\rightarrow Q\not\equiv \neg P\rightarrow \neg Q\):
         <ul><li>\(\neg P\rightarrow \neg Q\) is called the <b>inverse</b> of \(P\rightarrow Q\).</li></ul>
             <br>
-        if you combine a conditional statement with its converse, you get a <b>biconditional</b> statement:
+        if you combine a conditional statement with its converse, you get a <b>biconditional</b> statement (denoted by the <b>single bar left-right arrow</b> \(\leftrightarrow\):
             $$P\leftrightarrow Q\equiv(P\rightarrow Q)\wedge(Q\rightarrow P)$$
         in words:
         <ul>
@@ -623,9 +623,45 @@
 
         <h2 id="quantifiers">quantifiers</h2>
 
-        <span style="color: var(--woofleBlue);">
-            logic involving \(\forall\) and \(\exists\)
-        </span>
+        let's say that we want to talk about some proposition about a variable \(x\) (call it \(P(x)\)).
+            <br><br>
+        for some values, \(P(x)\) may be true, or it may be false, but we don't know the truth value of \(P(x)\) until
+        we know what \(x\) is; we call \(x\) a <b>free variable</b>.
+            <br><br>
+        generally, we want to avoid free variables when deciding the truth value of propositions, since the nature of a free
+        variable is that we don't know <i>anything</i> about it, so we can't know what will happen when we plug it in to \(P\).
+            <br><br>
+        so how can we talk more generally about \(P(x)\)?
+            <br><br>
+        for this, we can use two new symbols called <b>quantifiers</b>:
+        <ul>
+            <li>the <b>universal quantifier</b> (denoted by the symbol \(\forall\)) lets us see if \(P(x)\) is true for <i>every</i> value of \(x\).</li>
+            <li>the <b>existential quantifier</b> (denoted by the symbol \(\exists\)) lets us see if \(P(x)\) is true for <i>at least one</i> value of \(x\).</li>
+        </ul>
+            <br>
+        you can think of quantifiers as a way to change what the question about a proposition's truth value is asking:
+        <ul>
+            <li>
+                \(P(x)\): "is \(P(x)\) true?"
+                <ul><li>we don't know, since it depends on the value of \(x\) and \(x\) is a free variable.</li></ul>
+            </li>
+            <br>
+            <li>
+                \(\forall x,P(x)\): "for all \(x\), is \(P(x)\) true?"
+                <ul><li>if \(P(x)\) is false for <i>at least one</i> value, this statement is false. otherwise, it is true.</li></ul>
+            </li>
+            <br>
+            <li>
+                \(\exists x,P(x)\): "does there exist \(x\) such that \(P(x)\) true?"
+                <ul><li>if \(P(x)\) is true for <i>at least one</i> value, this statement is true. otherwise, it is false.</li></ul>
+            </li>
+        </ul>
+            <br>
+        as you probably noticed, each quantifier is attached to some variable, making the variable a <b>bound variable</b>, 
+        and is tacked on to the front of the proposition.
+            <br><br>
+        
+        ...
 
         <hr>
 
