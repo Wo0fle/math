@@ -28,7 +28,7 @@
             <ul>
                 <li><a href="#intro-to-formal-logic">🟩intro to formal logic</a></li>
                 <li><a href="#sets">🟩sets</a></li>
-                <li><a href="#quantifiers">🟥quantifiers</a></li>
+                <li><a href="#quantifiers">🟨quantifiers</a></li>
                 <li><a href="#counting">🟥counting</a></li>
                 <li><a href="#proofs">🟥proofs</a></li>
                 <li><a href="#induction">🟥mathematical induction</a></li>
@@ -628,7 +628,7 @@
         for some values, \(P(x)\) may be true, or it may be false, but we don't know the truth value of \(P(x)\) until
         we know what \(x\) is; we call \(x\) a <b>free variable</b>.
             <br><br>
-        generally, we want to avoid free variables when deciding the truth value of propositions, since the nature of a free
+        generally, we want to avoid free variables when deducing the truth value of propositions, since the nature of a free
         variable is that we don't know <i>anything</i> about it, so we can't know what will happen when we plug it in to \(P\).
             <br><br>
         so how can we talk more generally about \(P(x)\)?
@@ -648,19 +648,32 @@
             <br>
             <li>
                 \(\forall x,P(x)\): "for all \(x\), is \(P(x)\) true?"
-                <ul><li>if \(P(x)\) is false for <i>at least one</i> value, this statement is false. otherwise, it is true.</li></ul>
+                <ul><li>if \(P(x)\) is false for <i>at least one</i> value of \(x\), this statement is false. otherwise, it is true.</li></ul>
             </li>
             <br>
             <li>
                 \(\exists x,P(x)\): "does there exist \(x\) such that \(P(x)\) true?"
-                <ul><li>if \(P(x)\) is true for <i>at least one</i> value, this statement is true. otherwise, it is false.</li></ul>
+                <ul><li>if \(P(x)\) is true for <i>at least one</i> value of \(x\), this statement is true. otherwise, it is false.</li></ul>
             </li>
         </ul>
             <br>
+        this basically creates a new proposition by <i>modifying</i> the proposition \(P(x)\):
+        \(\forall x,P(x)\) is not the same proposition as \(P(x)\), for example.  
+            <br><br>
         as you probably noticed, each quantifier is attached to some variable, making the variable a <b>bound variable</b>, 
         and is tacked on to the front of the proposition.
             <br><br>
-        
+        since quantifiers simply create new propositions, we can use them with all the other connectives and symbols we learned before... 
+        just <i>make sure</i> you know what proposition each quantifier is attached to;
+        i often use parentheses to be extremely clear. 
+            <br><br>
+        important note: the common convention is that quantifiers will only attach to the most basic proposition directly to their right.
+        for example, consider this statement:
+            $$\forall x,P(x)\rightarrow Q$$
+        the convention states that it should be read aloud as "if for all \(x\), \(P(x)\), then \(Q\)."
+            <br><br>
+        if you instead wanted to say "for all \(x\), \(P(x)\) implies \(Q\)," i would write
+            $$\forall x,(P(x)\rightarrow Q)$$
         ...
 
         <hr>
