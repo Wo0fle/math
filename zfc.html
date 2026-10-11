@@ -24,28 +24,174 @@
         <div class="dashedbox">
             table of contents:
             <ul>
-                <li><a href="#axioms">🟥axioms</a></li>
+                <li><a href="#zfc-bg">🟩background</a></li>
+                <li><a href="#axioms">🟨axioms</a></li>
             </ul>
         </div>
 
-        ...
+        so the <a href="./proofs.html">🟨introductory mathematical logic and proofs</a> page of this site went over the basics of mathematical logic
+        and proofs (duh), often using sets. however, these sets were defined in a "hand-wavy" (the term often used is <b>naive</b>) way.
+        kind of ironic that the intro to rigorous math was built on a system which itself wasn't rigorously defined, right?
+            <br><br>
+        this page will introduce you to the foundations of modern math and the rules that govern it!
         
+        <hr>
+
+        <h2 id="zfc-bg">background</h2>
+
+        so what's wrong with the sets we had before?
+            <br><br>
+        the main issue is that we could make sets of <i>literally anything</i>.
+        <ul>
+            <li>the empty set? sure.</li>
+            <li>the set of all natural numbers? sounds good to me!</li>
+            <li>the set of all sets which do not contain themselves? i guess bro</li>
+            <li>the set of... wait</li>
+        </ul>
+            <br>
+        the set of all sets which do not contain themselves... is that actually allowed?
+            <br><br>
+        in our old system, there's nothing stopping us from creating it:
+        <ul>
+            <li>a set is a collection of objects</li>
+            <li>sets which do not contain themselves are objects</li>
+            <li>collect all of those</li>
+            <li>you're left with a set (which contains all sets which do not contain themselves)</li>
+        </ul>
+            <br>
+        this <i>by itself</i> doesn't violate any of the laws of logic we agreed on originally, but consider this proposition:
+            $$\text{The set of all sets that do not contain themselves contains itself.}$$
+        is this true? according to the law of excluded middle, it has to be either true or false, so let's try to find out which one it is.
+            $$
+                \text{Let }A=\{x:x\notin x\}\\\\
+                \text{If }A\in A\text{, then }A\text{ must satisfy the membership statement, so }A\notin A\\
+                A\in A\rightarrow A\notin A\text{... contradiction}\\\\
+                \text{If }A\notin A\text{, then }A\text{ satisfies the membership statement, so }A\in A\\
+                A\notin A\rightarrow A\in A\text{... contradiction}
+            $$
+        hold up, wait a minute... somethin' ain't right.
+            <br><br>
+        <div class="diagram-container">
+            "Gottem."<br>
+            - Bertrand Russell, 1901
+        </div>
+            <br>
+        what we've stumbled upon here is called <b>Russell's paradox</b>, and it shows that set theories with
+        <b>unrestricted comprehension</b> (AKA "any collection of things is a set") lead to contradictions.
+            <br><br>
+        this is what mathematicians call "really freaking bad," since it means that the logical system that was being
+        used has "holes" in it, so to speak. so how was this addressed?
+            <br><br>
+        well, mathematicians back in the day had to sit down and answer these questions:
+        <ul>
+            <li>what are the basic concepts that form the basis of all of mathematics? i.e. what are the "fundamental particles" of math?</li>
+            <li>what rules must these concepts follow? i.e. what are the "laws of physics" (axioms) of math?</li>
+        </ul>
+            <br>
+        answering these questions properly would mean the birth of a system of mathematics which would be "perfect."
+            <br><br>
+        so, some really smart people did some really smart things, and today, we have <b>ZFC set theory</b>.
+            <br><br>
+        ZFC is the name given to <b>Zermelo-Fraenkel set theory with the Axiom of Choice</b>, the contributors being the namesakes
+        Ernst Zermelo and Abraham Fraenkel, as well as other guys who helped out but apparently don't get to put their name on the system for 
+        some reason, such as Thoralf Skolem and John von Neumann.
+            <br><br>
+        so great! we found the perfect mathematical system now, right?
+            <br><br>
+        <div class="diagram-container">
+            "Nah."<br>
+            - Kurt Gödel, 1931
+        </div>
+            <br>
+        wellllllllll, Gödel actually showed that it is impossible to create a perfect mathematical system:
+        every axiomatic system of math will have some inconsistencies or some unprovable statements. 
+            <br><br>
+        however, there is no need to fret! instead of trying to create a perfect mathematical system, we can just pick one that works
+        really well for the types of questions we want to answer, and ZFC happens to be that! this does mean, though, that there are "alternate mathematical universes"
+        based on different axioms... which is awesome!
+            <br><br>
+        but enough about the math multiverse... let's get into ZFC!
+
         <hr>
 
         <h2 id="axioms">axioms</h2>
 
         the language of ZFC is based on these fundamental building blocks:
         <ul>
-            <li>logical connectives: \(\wedge\), \(\vee\), \(\neg\)</li>
+            <li>logical connectives: \(\wedge\), \(\vee\), \(\neg\), etc.</li>
             <li>variables</li>
             <li>quantifiers: \(\forall\), \(\exists\)</li>
         </ul>
             <br>
-        everything else is defined in terms of the above!
+        this means that the laws of logic/proof techniques that we learned about before still work; we are just formalizing
+        <i>sets</i>.
             <br><br>
-        with that, let's define the rules of our fancy new mathematical system!
+        additionally, on top of the philosophical laws of logic from before, we will add our own rules, called <b>axioms</b>,
+        regarding <i>mathematical</i> objects within ZFC.
             <br><br>
-        
+        let's go through them!
+        <ol>
+            <li>
+                <b>Axiom of Existence</b>: there exists a set.
+                    $$\exists x,x=x$$
+                congratulations! this is the very first building block of our mathematical universe: the set.
+                    <br><br>
+                ZFC's basic concept is the set, and everything else that you will later recognize (numbers, functions, etc.) will
+                be made of sets.
+                    <br><br>
+                all this axiom says is that there is a set; we don't know what it is yet, but it's there!
+                    <br><br>
+                actually, we haven't said what a set <i>is</i> yet either. for that, we will need...
+            </li>
+                <br>
+            <li>
+                <b>Axiom of Extensionality</b>: sets are defined by their elements.
+                    $$\forall x \forall y, ((\forall z, z\in x\leftrightarrow z\in y)\leftrightarrow x=y)$$
+                this axiom says if two sets have the same elements, then they are the same set.
+                    <br><br>
+                so great, we now know that sets have stuff in them, and that the stuff that is in them is what defines them.
+                    <br><br>
+                notice that this axiom says nothing about the order of elements; it just says if each element in one set is in the other
+                (and this is true both ways), then the sets are the same.
+                    <br><br>
+                we have now recovered the notion of a set being an "unordered collection of distinct objects," but we need to 
+                define some more rules to help create more sets!
+            </li>
+                <br>
+            <li>
+                <b>Axiom of Pairing</b>: for any two sets, there is a set containing those two.
+                    $$\forall x \forall y \exists z \forall u, (u\in z\leftrightarrow (u=x\vee u=y))$$
+                this axioms says that for any two sets \(x,y\), there exists a set \(\{x,y\}\).
+            </li>
+                <br>
+            <li>
+                <b>Axiom of Union</b>: the union of any set of sets exists.
+                    $$\forall x \exists y \forall z, (z\in y\leftrightarrow \exists u\in x, z\in u)$$
+                this is <i>NOT</i> the normal union operation \(\cup\) between two sets;
+                this axiom defines the big union operation \(\bigcup\) which combines all the elements of the elements of a set into its own set.
+                    <br><br>
+                that was kind of a mouthful, so it might be more insightful to see an example of how the Pairing and Union axioms work together
+                to form the normal \(\cup\) operation between two sets:
+                    $$
+                        a=\{p,q,f\}, b=\{n,m,g\} \\
+                        X=\{a,b\}\text{ by Pairing axiom} \\
+                        \bigcup X=\{p,q,f,n,m,g\}\text{ by Union axiom} \\
+                        a\cup b=\bigcup X
+                    $$
+            </li>
+                <br>
+            <li>power set</li>
+                <br>
+            <li>comprehension</li>
+                <br>
+            <li>infinity</li>
+                <br>
+            <li>choice</li>
+                <br>
+            <li>replacement</li>
+                <br>
+        </ol>
+        im lowkey cooking with this one
 
     </main>
     <footer><div id="cool-guy"><a target="_blank" href="https://wo0fle.github.io/links/">random content will be made</a></div></footer>
