@@ -139,7 +139,7 @@
                 ZFC's basic concept is the set, and everything else that you will later recognize (numbers, functions, etc.) will
                 be made of sets.
                     <br><br>
-                all this axiom says is that there is a set; we don't know what it is yet, but it's there!
+                all this axiom says is that there is a set; we don't know what's in it, but it's there!
                     <br><br>
                 actually, we haven't said what a set <i>is</i> yet either. for that, we will need...
             </li>
@@ -149,13 +149,15 @@
                     $$\forall x \forall y, ((\forall z, z\in x\leftrightarrow z\in y)\leftrightarrow x=y)$$
                 this axiom says if two sets have the same elements, then they are the same set.
                     <br><br>
+                it also kind of defines the in symbol \(\in\) (sets have stuff "\(\in\)" them).
+                    <br><br>
                 so great, we now know that sets have stuff in them, and that the stuff that is in them is what defines them.
                     <br><br>
                 notice that this axiom says nothing about the order of elements; it just says if each element in one set is in the other
                 (and this is true both ways), then the sets are the same.
                     <br><br>
                 we have now recovered the notion of a set being an "unordered collection of distinct objects," but we need to 
-                define some more rules to help create more sets!
+                define some more rules to help create more sets using sets!
             </li>
                 <br>
             <li>
@@ -180,18 +182,84 @@
                     $$
             </li>
                 <br>
-            <li>power set</li>
+            <li>
+                <b>The Axiom of Power Set</b>: for any set, the power set of that set exists.
+                    $$\forall x\exists y\forall z, (z\subseteq x\leftrightarrow z\in y)$$
+                "\(\subseteq\)" hasn't technically been defined yet so here's the symbolic definition:
+                    $$z\subseteq x := \forall u, u\in z\rightarrow u\in x$$
+                this axiom says that the power set of any set exists and is itself a set.
+                    <br><br>
+                as before, we'll denote the power set of \(x\) with \(\mathcal{P}(x)\).
+            </li>
                 <br>
-            <li>comprehension</li>
-                <br>
-            <li>infinity</li>
-                <br>
-            <li>choice</li>
-                <br>
-            <li>replacement</li>
-                <br>
+            <li>
+                <b>The Axiom Schema of Comprehension/Specification/Separation/Collection</b>: any collection of set elements which
+                satisfy some property is a set.
+                    $$symbolic def will be added later$$
+                this axiom says that given some set \(x\) and a property \(\phi\), we can form the set \(\{y\in x:\phi (x)\}\).
+                    <br><br>
+                importantly, this is <i>NOT</i> unrestricted comprehension; the set \(x\) above is called the <b>ambient set</b>,
+                and that is a <i>REQUIREMENT</i> to avoid issues like Russell's Paradox.
+                    <br><br>
+                this legalizes set builder notation!
+                    <br><br>
+                also, you probably noticed this is not called an axiom; this is an <b>axiom schema</b>, which is a rule that
+                defines a family of axioms.
+                    <br><br>
+                each member of this family is an axiom about the property \(\phi\). since \(\phi\) can be any of a number of
+                possible properties, we need a new axiom for each possible property. this axiom schema covers them all!
+            </li>
         </ol>
-        im lowkey cooking with this one
+            <br>
+        if you take just axioms 1-6 above, you form <b>Zermelo set theory</b>, which is, as it sounds, an ancestor of ZFC.
+            <br><br>
+        ok, that's cool, but right now the only thing we know exists is the set \(x\) from the axiom of Existence.
+        although we don't know anything about \(x\) other than its existence, it can actually lead us to a set we recognize!
+            $$
+                \text{By Existence, let }x\text{ be a set.}\\
+                \text{By Comprehension, form }z=\{y\in x:y\neq y\}\\
+                z\text{ has no elements, and what set has no elements?}\\
+                z=\emptyset\\
+                \therefore\emptyset\text{ exists!}
+            $$
+        i've never been so happy to see the empty set in my life! our mathematical universe now includes \(\emptyset\).
+            <br><br>
+        also, since the axiom of Extensionality says that sets are defined by their elements, there is only one uniquely glorious \(\emptyset\).
+            <br><br>
+        and now, using using the axioms of Pairing, Union, and Comprehension, we can create a bunch more finite sets, such as
+        <ul>
+            <li>\(\{\emptyset\}\)</li>
+            <li>\(\{\emptyset,\{\emptyset\}\}\)</li>
+            <li>\(\{\emptyset,\{\emptyset\},\{\emptyset,\{\emptyset\}\}\}\)</li>
+            <li>\(\{\emptyset,\{\emptyset,\{\emptyset\}\}\}\)</li>
+        </ul>
+            <br>
+        but, we <i>can't</i> make any infinitely large sets, since none of the axioms guarantee that it's even possible.
+            <br><br>
+        if only there was some sort of... axiom about infinity or something... that would be CRAZY, right?
+        <ol start="7">
+            <li>
+                <b>The Axiom of Infinity</b>:
+            </li>
+                <br>
+            <li>
+                <b>The Axiom Schema of Replacement</b>:
+            </li>
+        </ol>
+            <br>
+        if you add on axioms 7 and 8 to Zermelo set theory, you get <b>Zermelo-Fraenkel set theory</b> (ZF).
+            <br><br>
+        and finally, last but certainly not least...
+        <ol start="9">
+            <li>
+                <b>The Axiom of Choice</b>:
+            </li>
+        </ol>
+            <br>
+
+        ...
+        
+        <hr>
 
     </main>
     <footer><div id="cool-guy"><a target="_blank" href="https://wo0fle.github.io/links/">random content will be made</a></div></footer>
