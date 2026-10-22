@@ -195,8 +195,11 @@
             <li>
                 <b>The Axiom Schema of Comprehension/Specification/Separation/Collection</b>: any collection of <i>set</i> elements which
                 satisfy some property is a set.
-                    $$symbolic def will be added later$$
-                this axiom says that given some set \(x\) and a property \(\phi\), we can form the set \(\{y\in x:\phi (x)\}\).
+                    $$
+                        \text{Let }\phi\text{ be a formula in ZFC with free variables }x,z,w_1,w_2,...,w_n\text{.}\\
+                        \text{Then, }\forall z\forall w_{1}\forall w_{2} ... \forall w_{n}\exists y\forall x, (x\in y\leftrightarrow ((x\in z)\wedge \phi (x,w_{1},w_{2},...,w_{n},z)))
+                    $$
+                this axiom says that given some set \(x\) and a property \(\phi\), we can always form the set \(\{y\in x:\phi (x)\}\).
                     <br><br>
                 importantly, this is <i>NOT</i> unrestricted comprehension; the set \(x\) above is called the <b>ambient set</b>,
                 and that is a <i>REQUIREMENT</i> to avoid issues with sets such as Russell's Paradox.
@@ -262,13 +265,13 @@
                 \(\omega\) is actually a very important set to us, but we'll get to that once we are done with the axioms. 
                     <br><br>
                 last side note before we get to those: there are some that say that the axiom of Infinity should <i>not</i> be
-                taken. these people are called <b>finitists</b> because they believe that only finite sets exist. that is 
-                not to say that finitists that when you count high enough you'll run out of numbers or something, just that they think
+                taken. these people are called <b>finitists</b> because they believe that only finite sets exist. that's 
+                not to say that finitists think that when you count high enough you'll run out of numbers or something, just that they think
                 you shouldn't be able to talk about a set with an infinite number of elements as an object.
             </li>
                 <br>
             <li>
-                <b>The Axiom Schema of Replacement</b>: a transformation of a set is still a set.
+                <b>The Axiom Schema of Replacement/Collection</b>: a transformation of a set is still a set.
                     $$formal def will be added later$$
                 this axiom says that if \(f\) is a <b>class function</b> (like a function in naive set theory, but technically defined as a class instead since it may not have an ambient set)
                 and \(x\) is a set, then the image of \(x\) under \(f\) is also a set.
@@ -277,6 +280,21 @@
             <li>
                 <b>The Axiom of Regularity/Foundation/Well-Foundedness</b>: every non-empty set has some element that is disjoint from the set itself.
                     $$formal def will be added later$$
+                if this isn't confusing to you, then i guess you're smarter than i am because this confused me when i first heard it.
+                    <br><br>
+                like, if you put a red box inside a blue box, and put the blue box in a brown box, then the red box must <i>also</i> be in the brown box, right?
+                    <br><br>
+                well that's right in real life, but this <i>isn't</i> real life! sets are <i>not</i> like boxes!
+                    $$
+                        \text{Let }x\text{ be a set.}\\
+                        \text{Let }y=\{x\}\text{.}\\
+                        \text{Let }z=\{y\}\text{.}\\\\
+                        \text{Is }x\in z\text{?}\\\\
+                        z=\{y\}=\{\{x\}\}=\text{the set containing only }\{x\}\\
+                        \text{Since }x\neq\{x\}\text{, }x\notin z
+                    $$
+                idk maybe i just didn't activate my brain cell until too late but this wasn't intuitive for me, so i 
+                figured i'd include it just in case this happens to also resonate with someone else!
             </li>
         </ol>
             <br>
