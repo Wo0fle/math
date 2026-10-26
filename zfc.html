@@ -85,7 +85,7 @@
         well, mathematicians back in the day had to sit down and answer these questions:
         <ul>
             <li>what are the basic concepts that form the basis of all of mathematics? i.e. what are the "fundamental particles" of math?</li>
-            <li>what rules must these concepts follow? i.e. what are the "laws of physics" (axioms) of math?</li>
+            <li>what rules must these concepts follow? i.e. what are the "fundamental laws" (axioms) of math?</li>
         </ul>
             <br>
         answering these questions properly would mean the birth of a system of mathematics which would be "perfect."
@@ -123,7 +123,7 @@
             <li>quantifiers: \(\forall\), \(\exists\)</li>
         </ul>
             <br>
-        this means that the laws of logic/proof techniques that we learned about before still work; we are just formalizing
+        this means that the laws of logic/proof techniques/logical structures that we learned about before still work; we are just formalizing
         <i>sets</i>.
             <br><br>
         additionally, on top of the philosophical laws of logic from before, we will add our own rules, called <b>axioms</b>,
@@ -176,9 +176,9 @@
                 to form the normal \(\cup\) operation between two sets:
                     $$
                         a=\{p,q,f\}, b=\{n,m,g\} \\
-                        X=\{a,b\}\text{ by Pairing axiom} \\
-                        \bigcup X=\{p,q,f,n,m,g\}\text{ by Union axiom} \\
-                        a\cup b=\bigcup X
+                        \text{There exists }X=\{a,b\}\text{ by Pairing axiom} \\
+                        \text{There exists }\bigcup X=\{p,q,f,n,m,g\}\text{ by Union axiom} \\
+                        a\cup b:=\bigcup X
                     $$
             </li>
                 <br>
@@ -199,8 +199,8 @@
                         \text{Let }\phi\text{ be a formula in ZFC with free variables }x,z,w_1,w_2,...,w_n\text{.}\\
                         \text{Then, }\forall z\forall w_{1}\forall w_{2} ... \forall w_{n}\exists y\forall x, (x\in y\leftrightarrow ((x\in z)\wedge \phi (x,w_{1},w_{2},...,w_{n},z)))
                     $$
-                this axiom says that given some set \(x\) and a property \(\phi\), we can always form the set \(\{y\in x:\phi (x)\}\).
-                    <br><br>
+                this axiom says that given some set \(x\) and a property \(\phi\), we can always form the set 
+                    $$\{y\in x:\phi (x)\}$$
                 importantly, this is <i>NOT</i> unrestricted comprehension; the set \(x\) above is called the <b>ambient set</b>,
                 and that is a <i>REQUIREMENT</i> to avoid issues with sets such as Russell's Paradox.
                     <br><br>
