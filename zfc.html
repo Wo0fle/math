@@ -65,9 +65,9 @@
             $$
                 \text{Let }A=\{x:x\notin x\}\\\\
                 \text{If }A\in A\text{, then }A\text{ must satisfy the membership statement, so }A\notin A\\
-                A\in A\rightarrow A\notin A\text{... contradiction}\\\\
+                A\in A\Rightarrow A\notin A\text{... contradiction}\\\\
                 \text{If }A\notin A\text{, then }A\text{ satisfies the membership statement, so }A\in A\\
-                A\notin A\rightarrow A\in A\text{... contradiction}
+                A\notin A\Rightarrow A\in A\text{... contradiction}
             $$
         hold up, wait a minute... somethin' ain't right.
             <br><br>
@@ -146,7 +146,7 @@
                 <br>
             <li>
                 <b>Axiom of Extensionality</b>: sets are defined by their elements.
-                    $$\forall x \forall y, ((\forall z, z\in x\leftrightarrow z\in y)\leftrightarrow x=y)$$
+                    $$\forall x \forall y, ((\forall z, z\in x\Leftrightarrow z\in y)\Leftrightarrow x=y)$$
                 this axiom says if two sets have the same elements, then they are the same set.
                     <br><br>
                 it also kind of defines the in symbol \(\in\) (sets have stuff "\(\in\)" them).
@@ -162,13 +162,13 @@
                 <br>
             <li>
                 <b>Axiom of Pairing</b>: for any two sets, there is a set containing those two.
-                    $$\forall x \forall y \exists z \forall u, (u\in z\leftrightarrow (u=x\vee u=y))$$
+                    $$\forall x \forall y \exists z \forall u, (u\in z\Leftrightarrow (u=x\vee u=y))$$
                 this axioms says that for any two sets \(x,y\), there exists a set \(\{x,y\}\).
             </li>
                 <br>
             <li>
                 <b>Axiom of Union</b>: the union of any set of sets exists.
-                    $$\forall x \exists y \forall z, (z\in y\leftrightarrow \exists u\in x, z\in u)$$
+                    $$\forall x \exists y \forall z, (z\in y\Leftrightarrow \exists u\in x, z\in u)$$
                 this is <i>NOT</i> the normal union operation \(\cup\) between two sets;
                 this axiom defines the big union operation \(\bigcup\) which combines all the elements of the elements of a set into its own set.
                     <br><br>
@@ -184,28 +184,25 @@
                 <br>
             <li>
                 <b>The Axiom of Power Set</b>: for any set, the power set of that set exists.
-                    $$\forall x\exists y\forall z, (z\subseteq x\leftrightarrow z\in y)$$
+                    $$\forall x\exists y\forall z, (z\subseteq x\Leftrightarrow z\in y)$$
                 "\(\subseteq\)" hasn't technically been defined yet, so here's the symbolic definition:
-                    $$z\subseteq x := \forall u, u\in z\rightarrow u\in x$$
+                    $$z\subseteq x := \forall u, u\in z\Rightarrow u\in x$$
                 this axiom says that the power set of any set exists and is itself a set.
                     <br><br>
                 as before, we'll denote the power set of \(x\) with \(\mathcal{P}(x)\).
             </li>
                 <br>
             <li>
-                <b>The Axiom Schema of Comprehension/Specification/Separation/Collection</b>: any collection of <i>set</i> elements which
+                <b>The Axiom Schema of Comprehension/Specification/Separation</b>: any collection of elements in a set which
                 satisfy some property is a set.
-                    $$
-                        \text{Let }\phi\text{ be a formula in ZFC with free variables }x,z,w_1,w_2,...,w_n\text{.}\\
-                        \text{Then, }\forall z\forall w_{1}\forall w_{2} ... \forall w_{n}\exists y\forall x, (x\in y\leftrightarrow ((x\in z)\wedge \phi (x,w_{1},w_{2},...,w_{n},z)))
-                    $$
-                this axiom says that given some set \(x\) and a property \(\phi\), we can always form the set 
-                    $$\{y\in x:\phi (x)\}$$
-                importantly, this is <i>NOT</i> unrestricted comprehension; the set \(x\) above is called the <b>ambient set</b>,
+                    $$\text{For any formula }\phi\text{, }\forall a\exists y\forall x,(x\in y\Leftrightarrow(x\in a\wedge \phi(x)))$$
+                this axiom says that given some set \(a\) and a property \(\phi\), we can always form the set 
+                    $$\{x\in a:\phi (x)\}$$
+                importantly, this is <i>NOT</i> unrestricted comprehension; the set \(a\) above is called the <b>ambient set</b>,
                 and that is a <i>REQUIREMENT</i> to avoid issues with sets such as Russell's Paradox.
                     <br><br>
                 if you define some collection of items <i>without</i> an ambient set (like \(\{x:\phi(x)\}\)), it is called a 
-                <b>class</b>.
+                <b>class</b>, and it may or may not be a set.
                     <br><br>
                 also, you probably noticed this is not called an axiom; this is an <b>axiom schema</b>, which is a rule that
                 defines a family of axioms.
@@ -248,7 +245,7 @@
                 <b>The Axiom of Infinity</b>: an infinite set exists.
                     $$\exists \omega, \emptyset\in \omega\wedge(\forall y\in \omega, y\cup\{y\}\in \omega)$$
                 also, since it hasn't technically been defined yet:
-                    $$\forall y\in x,P(y):=\forall y,(y\in x\rightarrow P(y))$$
+                    $$(\forall y\in x,P(y)):=\forall y,(y\in x\Rightarrow P(y))$$
                 basically, we can restrict \(\forall\) to a set.
                     <br><br>
                 anyway, this axiom says says that there is a set named \(\omega\) that contains
@@ -264,14 +261,14 @@
                     <br><br>
                 \(\omega\) is actually a very important set to us, but we'll get to that once we are done with the axioms. 
                     <br><br>
-                last side note before we get to those: there are some that say that the axiom of Infinity should <i>not</i> be
+                last side note before we get to the rest of those: there are some that say that the axiom of Infinity should <i>not</i> be
                 taken. these people are called <b>finitists</b> because they believe that only finite sets exist. that's 
                 not to say that finitists think that when you count high enough you'll run out of numbers or something, just that they think
                 you shouldn't be able to talk about a set with an infinite number of elements as an object.
             </li>
                 <br>
             <li>
-                <b>The Axiom Schema of Replacement/Collection</b>: a transformation of a set is still a set.
+                <b>The Axiom Schema of Replacement</b>: a transformation of a set is still a set.
                     $$formal def will be added later$$
                 this axiom says that if \(f\) is a <b>class function</b> (like a function in naive set theory, but technically defined as a class instead since it may not have an ambient set)
                 and \(x\) is a set, then the image of \(x\) under \(f\) is also a set.
