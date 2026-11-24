@@ -133,7 +133,7 @@
         <ol>
             <li>
                 <b>Axiom of Existence</b>: there exists a set.
-                    $$\exists x,x=x$$
+                    $$\exists x,(x=x)$$
                 congratulations! this is the very first building block of our mathematical universe: the set.
                     <br><br>
                 ZFC's basic concept is the set, and everything else that you will later recognize (numbers, functions, etc.) will
@@ -146,7 +146,7 @@
                 <br>
             <li>
                 <b>Axiom of Extensionality</b>: sets are defined by their elements.
-                    $$\forall x \forall y, ((\forall z, z\in x\Leftrightarrow z\in y)\Leftrightarrow x=y)$$
+                    $$\forall x:\forall y, ((\forall z, z\in x\Leftrightarrow z\in y)\Leftrightarrow x=y)$$
                 this axiom says if two sets have the same elements, then they are the same set.
                     <br><br>
                 it also kind of defines the in symbol \(\in\) (sets have stuff "\(\in\)" them).
@@ -162,13 +162,13 @@
                 <br>
             <li>
                 <b>Axiom of Pairing</b>: for any two sets, there is a set containing those two.
-                    $$\forall x \forall y \exists z \forall u, (u\in z\Leftrightarrow (u=x\vee u=y))$$
+                    $$\forall x:\forall y:\exists z:\forall u, (u\in z\Leftrightarrow (u=x\vee u=y))$$
                 this axioms says that for any two sets \(x,y\), there exists a set \(\{x,y\}\).
             </li>
                 <br>
             <li>
                 <b>Axiom of Union</b>: the union of any set of sets exists.
-                    $$\forall x \exists y \forall z, (z\in y\Leftrightarrow \exists u\in x, z\in u)$$
+                    $$\forall x:\exists y:\forall z, (z\in y\Leftrightarrow \exists u\in x, z\in u)$$
                 this is <i>NOT</i> the normal union operation \(\cup\) between two sets;
                 this axiom defines the big union operation \(\bigcup\) which combines all the elements of the elements of a set into its own set.
                     <br><br>
@@ -184,7 +184,7 @@
                 <br>
             <li>
                 <b>The Axiom of Power Set</b>: for any set, the power set of that set exists.
-                    $$\forall x\exists y\forall z, (z\subseteq x\Leftrightarrow z\in y)$$
+                    $$\forall x:\exists y:\forall z, (z\subseteq x\Leftrightarrow z\in y)$$
                 "\(\subseteq\)" hasn't technically been defined yet, so here's the symbolic definition:
                     $$z\subseteq x := \forall u, u\in z\Rightarrow u\in x$$
                 this axiom says that the power set of any set exists and is itself a set.
@@ -195,7 +195,7 @@
             <li>
                 <b>The Axiom Schema of Comprehension/Specification/Separation</b>: any collection of elements in a set which
                 satisfy some property is a set.
-                    $$\text{For any formula }\phi\text{, }\forall a\exists y\forall x,(x\in y\Leftrightarrow(x\in a\wedge \phi(x)))$$
+                    $$\text{For any formula }\phi\text{, }\\\forall a:\exists y:\forall x,(x\in y\Leftrightarrow(x\in a\wedge \phi(x)))$$
                 this axiom says that given some set \(a\) and a property \(\phi\), we can always form the set 
                     $$\{x\in a:\phi (x)\}$$
                 importantly, this is <i>NOT</i> unrestricted comprehension; the set \(a\) above is called the <b>ambient set</b>,
@@ -243,7 +243,7 @@
         <ol start="7">
             <li>
                 <b>The Axiom of Infinity</b>: an infinite set exists.
-                    $$\exists \omega, \emptyset\in \omega\wedge(\forall y\in \omega, y\cup\{y\}\in \omega)$$
+                    $$\exists \omega, (\emptyset\in \omega\wedge(\forall y\in \omega, y\cup\{y\}\in \omega))$$
                 also, since it hasn't technically been defined yet:
                     $$(\forall y\in x,P(y)):=\forall y,(y\in x\Rightarrow P(y))$$
                 basically, we can restrict \(\forall\) to a set.
@@ -269,14 +269,14 @@
                 <br>
             <li>
                 <b>The Axiom Schema of Replacement</b>: a transformation of a set is still a set.
-                    $$formal def will be added later$$
+                    <br><br>
                 this axiom says that if \(f\) is a <b>class function</b> (like a function in naive set theory, but technically defined as a class instead since it may not have an ambient set)
                 and \(x\) is a set, then the image of \(x\) under \(f\) is also a set.
             </li>
                 <br>
             <li>
                 <b>The Axiom of Regularity/Foundation/Well-Foundedness</b>: every non-empty set has some element that is disjoint from the set itself.
-                    $$formal def will be added later$$
+                    $$\forall x\neq\emptyset:\exists y\in x, (y\cap x=\emptyset)$$
                 if this isn't confusing to you, then i guess you're smarter than i am because this confused me when i first heard it.
                     <br><br>
                 like, if you put a red box inside a blue box, and put the blue box in a brown box, then the red box must <i>also</i> be in the brown box, right?
@@ -291,7 +291,7 @@
                         \text{Since }x\neq\{x\}\text{, }x\notin z
                     $$
                 idk maybe i just didn't activate my brain cell until too late but this wasn't intuitive for me, so i 
-                figured i'd include it just in case this happens to also resonate with someone else!
+                figured i'd include this little clarification just in case this happens to also resonate with someone else!
             </li>
         </ol>
             <br>
